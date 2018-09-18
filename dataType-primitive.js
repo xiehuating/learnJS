@@ -1,71 +1,68 @@
 /*
 *
 *
-*
 Null
-*
 *
 *
 */
 
 
 
+/***************************************************************************************/
+
 
 
 /*
-*
 *
 *
 Undefined
 *
 *
-*
 */
 
 
 
+/***************************************************************************************/
+
 
 
 /*
-*
 *
 *
 Boolean
 *
 *
-*
 */
-Boolean.constructor;
-Boolean.prototype;
+bool.constructor;
+bool.prototype;
 
-Boolean.toString();
-Boolean.valueOf();
-// 返回该对象源码
-Boolean.toSource();
+bool.toString();
+bool.valueOf();
 
 
+
+/***************************************************************************************/
 
 
 
 /*
 *
 *
-*
 Number
 *
 *
-*
 */
+
 num.constructor;
-num.prototype;
+Number.prototype; //可以给Number构造函数设置prototype中的属性和方法
 //表示最大数、最小数
-num.MAX_VALUE;
-num.MIN_VALUE;
-//非数值数字
-num.NaN;
+Number.MAX_VALUE;
+Number.MIN_VALUE;
+//非数值数字，JS以NaN的形式输出Number.NaN
+Number.NaN; 
 //溢出时返回该值。负无穷大、正无穷大
-num.NEGATIVE_INFINITY;
-num.POSITIVE_INFINITY;
+Number.NEGATIVE_INFINITY; //-Infinity
+Number.POSITIVE_INFINITY; //Infinity
 
 //
 num.toString();
@@ -76,7 +73,7 @@ num.toFixed(); //按照指定的小叔返回数值的字符串表示
 	var num=10.005;
 	num.toFixed(2); //"10.01"
 num.toExponential(); //该方法返回以指数表示法表示的数值的字符串形式
-	var4 num=10;
+	var num=10;
 	num.toExponential(1) //"1.0e+1"
 num.toPrecision(num); //能够得到某个最适合的数字格式的字符串表达
 	var num=99;
@@ -86,10 +83,11 @@ num.toPrecision(num); //能够得到某个最适合的数字格式的字符串�
 
 
 
+/***************************************************************************************/
+
 
 
 /*
-*
 *
 *
 String
@@ -98,13 +96,13 @@ String
 */
 
 //字符串属性
-String.Constructor;
-String.length;
-String.prototype;
+str.constructor;
+str.length;
+String.prototype; //可以给String构造函数设置prototype中的属性和方法
 
-toString();
-toLocaleString();
-valueOf();
+str.toString();
+str.toLocaleString();
+str.valueOf();
 
 //返回指定位置的字符，返回指定位置字符的Unicode编码
 str.charAt(index);
@@ -143,11 +141,22 @@ str.localeCompare(str);
 
 //从字符编码创建一个字符串
 String.fromCharCode(numX,numX,...,numX);
+	String.fromCharCode(97,98,99,100); //"abcd"
+
+
+/***************************************************************************************/
+
+
+/*
+*
+*
+Symbol(new in ECMAScript 6)
+*
+*
+*/
 
 
 
 
 
-//Symbol(new in ECMAScript 6)
-
-
+/***************************************************************************************/
