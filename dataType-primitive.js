@@ -10,6 +10,8 @@ Null
 
 
 
+
+
 /*
 *
 *
@@ -22,6 +24,8 @@ Undefined
 
 
 
+
+
 /*
 *
 *
@@ -31,7 +35,6 @@ Boolean
 *
 *
 */
-
 Boolean.constructor;
 Boolean.prototype;
 
@@ -39,6 +42,8 @@ Boolean.toString();
 Boolean.valueOf();
 // 返回该对象源码
 Boolean.toSource();
+
+
 
 
 
@@ -78,6 +83,8 @@ num.toPrecision(num); //能够得到某个最适合的数字格式的字符串�
 	num.toPrecision(1); //"1e+2" 接收的参数表示所有数字的位数（不包括指数）
 	num.toPrecision(2); //"99"
 	num.toPrecision(3); //"99.0"
+
+
 
 
 
