@@ -32,27 +32,27 @@ Number
 *
 *
 */
-Number.constructor;
-Number.prototype;
+num.constructor;
+num.prototype;
 //表示最大数、最小数
-Number.MAX_VALUE;
-Number.MIN_VALUE;
+num.MAX_VALUE;
+num.MIN_VALUE;
 //非数值数字
-Number.NaN;
+num.NaN;
 //溢出时返回该值。负无穷大、正无穷大
-Number.NEGATIVE_INFINITY;
-Number.POSITIVE_INFINITY;
+num.NEGATIVE_INFINITY;
+num.POSITIVE_INFINITY;
 
 //
-Number.toString();
-Number.valueOf();
-Number.toLocaleString();
+num.toString();
+num.valueOf();
+num.toLocaleString();
 //把数字转换为字符串，结果的小数点后有指定的数字
-Number.toFixed(num);
+num.toFixed(num);
 //把对象转换为指数计数法，传入参数确定小数位数。输出结果为字符串
-Number.toExponential(num);
+num.toExponential(num);
 //把数字格式化为指定的长度。输出结果为字符串
-Number.toPrecision(num);
+num.toPrecision(num);
 
 
 /*
