@@ -106,18 +106,45 @@ str.valueOf();
 
 //返回指定位置的字符，返回指定位置字符的Unicode编码
 str.charAt(index);
+	var stringValue = "hello world";
+	alert(stringValue.chatAt(1)); //"e"
+	alert(stringValue[1]); //"e"
+
 str.charCodeAt(index);
+	var stringValue = "hello world";
+	alert(stringValue.charCodeAt(1)); //"101",e字母的unicode编码
 
-//字符串操作
+//字符串操作，对原始字符串不会有任何影响
 str.concat("sting","sting",...,"string"); //使用 " + " 运算符来进行字符串的连接运算通常会更简便一些。
+	var stringValue = "hello ";
+	var result = stringValue.concat("world", "!");
+	alert(result); //"hello world!"
 
-str.slice(); //提取字符串的片段，并在新的字符串中返回被提取的部分
+str.slice(start, end); //提取字符串的片段，并在新的字符串中返回被提取的部分
+	var stringValue = "hello world";
+	alert( stringValue.slice(3) );  //"lo world"
+	alert( stringValue.slice(3,7) );  //"lo w"
+	alert( stringValue.slice(-3) );  //"rld", 第一个参数-3被转换为8
+	alert( stringValue.slice(3, -4) );  //"lo w"，第二个参数-4被转换为7
 
-str.substr(); //从起始索引好提取字符串中指定数目的字符
+str.substr(start, length); //从起始索引好提取字符串中指定数目的字符
+	var stringValue = "hello world";
+	alert( stringValue.substr(3) );  //"lo world"
+	alert( stringValue.substr(3,7) );  //"lo worl"
+	alert( stringValue.substr(-3) );  //"rld"，第一个参数-3被转换为8
+	alert( stringValue.substr(3, -4) );  //""（空字符串），第二个参数-4被转换为0
 
-str.substring(); //提取字符串中两个指定的索引号之间的字符
+str.substring(start, end); //提取字符串中两个指定的索引号之间的字符
+	var stringValue = "hello world";
+	alert( stringValue.substring(3) );  //"lo world"
+	alert( stringValue.substring(3,7) );  //"lo w"
+	alert( stringValue.substring(-3) );  //"hello world"，第一个参数-3被转换为0
+	alert( stringValue.substring(3,-4) );  //"hel"，第二个参数-4被转换为0
 
 str.trim(); //删除字符串前置和后缀的所有空格
+	var stringValue = "   hello world   ";
+	var trimmedStringValue = stringValue.trim();
+	alert( trimmedStringValue ); //"hello world"
 
 //字符串位置。检索字符串，检索不到返回-1
 str.indexOf(searchvalue, fromindex); //从指定位置向后搜索
