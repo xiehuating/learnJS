@@ -25,6 +25,7 @@
 	node.setAttribute("attributename", "attributevalue");
 	node.getAttributeNode("attributename"); //返回指定属性节点
 	node.setAttributeNode(attributenode); //设置或更改指定属性节点
+	elementNode.attributes;  //节点（元素）的属性节点集合
 
 
 //节点（元素）的父节点、节点（元素）的子节点
@@ -37,31 +38,28 @@
 
 
 //节点的名称、节点的值、节点的类型
-	node.nodeName;
-	node.nodeValue;
+	node.nodeName;  //元素节点返回标签名；属性节点返回属性名；文本节点返回“#text”
+	node.nodeValue;  //元素节点返回null；属性节点返回属性值；文本节点返回文本内容；
 	node.nodeType; //元素 1，属性 2，文本 3，注释 8，文档 9
 
 
 //设置或者返回节点的内容
-	node.innerHTML;
+	elementNode.innerHTML;
 
 //设置或返回节点及其后代的文本内容
-	node.textContent;
+	elementNode.textContent;
 
 
-//节点（元素）的属性节点集合
-	node.attributes
 //设置或返回元素的class，id，title
-	node.className //注意此处是className不是class
-	node.id
-	node.title
-
+	elementNode.className; //注意此处是className不是class
+	elementNode.id;
+	elementNode.title;
 
 
 //根节点
-	document.documentElement // 全部文档
-	document.body //文档的主体
-	node.ownerDocument // 返回元素的根元素（文档对象）
+	document.documentElement; // 全部文档
+	document.body; //文档的主体
+	node.ownerDocument; // 返回元素的根元素（文档对象）
 
 
 //事件
@@ -76,7 +74,7 @@
 
 
 //需要注意的点：
-	//html页面的加载
+	//html页面的加载完成后执行JS代码。
 	//JS加载和执行的顺序
 
 

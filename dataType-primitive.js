@@ -34,7 +34,7 @@ Boolean
 *
 */
 bool.constructor;
-bool.prototype;
+Boolean.prototype;
 
 bool.toString();
 bool.valueOf();
@@ -77,6 +77,7 @@ num.toExponential(); //该方法返回以指数表示法表示的数值的字符
 	num.toExponential(1) //"1.0e+1"
 num.toPrecision(num); //能够得到某个最适合的数字格式的字符串表达
 	var num=99;
+	num.toPrecision(0); //argument must be between 1 and 100
 	num.toPrecision(1); //"1e+2" 接收的参数表示所有数字的位数（不包括指数）
 	num.toPrecision(2); //"99"
 	num.toPrecision(3); //"99.0"
