@@ -121,12 +121,14 @@ str.concat("sting","sting",...,"string"); //使用 " + " 运算符来进行字�
 	var result = stringValue.concat("world", "!");
 	alert(result); //"hello world!"
 
-str.slice(start, end); //提取字符串的片段，并在新的字符串中返回被提取的部分
+str.slice(start, end); //提取字符串的片段，并在新的字符串中返回被提取的部分，提取出的字符串包括start不包括end
 	var stringValue = "hello world";
 	alert( stringValue.slice(3) );  //"lo world"
 	alert( stringValue.slice(3,7) );  //"lo w"
 	alert( stringValue.slice(-3) );  //"rld", 第一个参数-3被转换为8
-	alert( stringValue.slice(3, -4) );  //"lo w"，第二个参数-4被转换为7
+	alert( stringValue.slice(3,-4) );  //"lo w"，第二个参数-4被转换为7
+	alert( stringValue.slice(-3,-4) );  //""（空字符串）
+	alert( stringValue.slice(-3,-1) );  //"rl"
 
 str.substr(start, length); //从起始索引好提取字符串中指定数目的字符
 	var stringValue = "hello world";
@@ -134,13 +136,15 @@ str.substr(start, length); //从起始索引好提取字符串中指定数目的
 	alert( stringValue.substr(3,7) );  //"lo worl"
 	alert( stringValue.substr(-3) );  //"rld"，第一个参数-3被转换为8
 	alert( stringValue.substr(3, -4) );  //""（空字符串），第二个参数-4被转换为0
+	alert( stringValue.substr(-3, -4) );  //""（空字符串）
 
-str.substring(start, end); //提取字符串中两个指定的索引号之间的字符
+str.substring(start, end); //提取字符串中两个指定的索引号之间的字符，提取出的字符串包括start不包括end
 	var stringValue = "hello world";
 	alert( stringValue.substring(3) );  //"lo world"
 	alert( stringValue.substring(3,7) );  //"lo w"
 	alert( stringValue.substring(-3) );  //"hello world"，第一个参数-3被转换为0
 	alert( stringValue.substring(3,-4) );  //"hel"，第二个参数-4被转换为0
+	alert( stringValue.substring(-3, -4) ); //""（空字符串）
 
 str.trim(); //删除字符串前置和后缀的所有空格
 	var stringValue = "   hello world   ";

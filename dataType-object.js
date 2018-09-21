@@ -165,7 +165,7 @@ String();
 obj.toString();
 	var num=10;
 	num.toString(); //"10"
-	num.toString(2); //"2" 转换为2进制字符串形式
+	num.toString(2); //"1010"  转换为2进制字符串形式
 	num.toString(8); //"12"
 	num.toString(10); //"10"
 	num.toString(16); //"a"
