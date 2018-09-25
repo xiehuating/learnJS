@@ -62,13 +62,14 @@
 	node.ownerDocument; // 返回元素的根元素（文档对象）
 
 
-//事件
+//事件对象
 	<h1 onclick="func()"> 请点击 <h1>
 	document.getElementById("id").onclick = func; //待页面加载完成后再绑定事件
 	node.addEventListener("click", func, false);
 
 	document.getElementById("id").onclick = function(){func(p1, p2)}; //传递参数
 	node.addEventListener("click", function(){func(p1,p2)}, false);
+
 
 
 

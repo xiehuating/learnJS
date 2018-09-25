@@ -1,7 +1,7 @@
 /*
 *
 *
-Null
+* Null
 *
 *
 */
@@ -15,7 +15,7 @@ Null
 /*
 *
 *
-Undefined
+* Undefined
 *
 *
 */
@@ -29,7 +29,7 @@ Undefined
 /*
 *
 *
-Boolean
+* Boolean
 *
 *
 */
@@ -48,7 +48,7 @@ bool.valueOf();
 /*
 *
 *
-Number
+* Number
 *
 *
 */
@@ -91,7 +91,7 @@ num.toPrecision(num); //能够得到某个最适合的数字格式的字符串�
 /*
 *
 *
-String
+* String
 *
 *
 */
@@ -161,7 +161,7 @@ str.lastIndexOf(searchvalue, fromindex); //从指定位置向前搜索
 	alert( stringValue.indexOf("o", 6) ); //4
 
 //字符串模糊匹配方法
-str.match(searchvalue|regexp); //返回匹配的字符串值，regexp有g则执行全局匹配；此方法与调用RegExp的exec方法相同。
+str.match(searchvalue|regexp); //regexp带有g则执行全局匹配，返回null或者匹配的字符串值的数组（此方法与调用RegExp的exec方法相同）；不带有g则返回null或者一个存放其他相关信息的数组。
 	var text = "cat, bat, sat, fat";
 	var pattern = /.at/;
 	var matches = text.match(pattern);
@@ -214,7 +214,7 @@ str.replace(regexp|substr,replacement); //替换与正则表达式匹配的字�
             }             
         });
     }    
-    lert(htmlEscape("<p class=\"greeting\">Hello world!</p>")); //&lt;p class=&quot;greeting&quot;&gt;Hello world!&lt;/p&gt;
+    alert(htmlEscape("<p class=\"greeting\">Hello world!</p>")); //&lt;p class=&quot;greeting&quot;&gt;Hello world!&lt;/p&gt;
 
 str.search(searchvalue|regexp); //检索与正则表达式匹配的值，返回匹配值的位置，search不执行全局匹配，总是返回第一个值的匹配位置。检索不到返回-1
 	var text = "cat, bat, sat, fat";
@@ -248,7 +248,7 @@ String.fromCharCode(numX,numX,...,numX);
 /*
 *
 *
-Symbol(new in ECMAScript 6)
+* Symbol(new in ECMAScript 6)
 *
 *
 */

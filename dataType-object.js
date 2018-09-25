@@ -2,7 +2,7 @@
 *
 *
 *
-Object
+* Object
 *
 *
 *
@@ -18,7 +18,7 @@ Object
 *
 *
 *
-Array
+* Array
 *
 *
 *
@@ -34,7 +34,7 @@ Array
 *
 *
 *
-RegExp
+* RegExp
 *
 *
 *
@@ -50,7 +50,22 @@ RegExp
 *
 *
 *
-Function
+* Function
+*
+*
+*
+*/
+
+
+
+/***************************************************************************************/
+
+
+/*
+*
+*
+*
+* Date
 *
 *
 *
@@ -66,7 +81,7 @@ Function
 *
 *
 *
-JSON
+* Math
 *
 *
 *
@@ -82,40 +97,8 @@ JSON
 *
 *
 *
-Date
-*
-*
-*
-*/
-
-
-
-/***************************************************************************************/
-
-
-
-/*
-*
-*
-*
-Math
-*
-*
-*
-*/
-
-
-
-/***************************************************************************************/
-
-
-
-/*
-*
-*
-*
-Global 全局对象
-https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects
+* Global 全局对象
+* https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects
 *
 *
 *
@@ -126,23 +109,26 @@ isNaN();
 
 //转型函数-转换为数值
 Number();
+	Number("000011"); //11
+	Number("1234blue"); //NaN
 	Number("Hello world"); //NaN
 	Number(""); //0
 	Number(null); //0
-	Number(undefined)l //NaN
-	Number("000011"); //11
+	Number(undefined); //NaN
 	Number(true); //1
+	Number(false); //0
 parseInt(); //转换为数字时比Number()更常用
+	parseInt(22.5); //22
+	parseInt("22.5"); //22
 	parseInt("1234blue"); //1234
 	parseInt(""); //NaN
 	parseInt(null); //NaN
 	parseInt(undefined); //NaN
+	parseInt(true); //NaN
+	parseInt(false); //NaN
 	parseInt("0xA"); //10 十六进制
-	parseInt(22.5); //22
-	parseInt("22.5"); //22
 	parseInt("070"); //56 八进制
 	parseInt("70"); //70 十进制
-	parseInt("123blue123"); //123
 	parseInt("10",2) //2 第一个参数为2进制，将第一个参数转换为10进制
 	parseInt("10",8) //8
 	parseInt("10",10) //10
@@ -161,7 +147,8 @@ String();
 	String(10); //"10"
 	String(true); //"true"
 	String(null); //"null"
-	String(value4)l //"undefined"
+	String(undefined); //"undefined"
+	String(value4); //"undefined"
 obj.toString();
 	var num=10;
 	num.toString(); //"10"
