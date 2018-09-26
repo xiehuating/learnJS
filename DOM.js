@@ -1,3 +1,13 @@
+/*
+*
+*
+*
+* DOM 2
+*
+*
+*
+*/
+
 //查找HTML元素
 	document.getElementById("id");
 	node.getElementsByTagName("tagnName"); 
@@ -64,14 +74,32 @@
 
 //事件对象
 	<h1 onclick="func()"> 请点击 <h1>
-	document.getElementById("id").onclick = func; //待页面加载完成后再绑定事件
+	node.onclick = func; //待页面加载完成后再绑定事件
 	node.addEventListener("click", func, false);
 
-	document.getElementById("id").onclick = function(){func(p1, p2)}; //传递参数
+	node.onclick = function(){func(p1, p2)}; //传递参数
 	node.addEventListener("click", function(){func(p1,p2)}, false);
 
 
 
+/***************************************************************************************/
+
+
+
+/*
+*
+*
+*
+* DOM 3
+*
+*
+*
+*/
+
+
+
+
+/***************************************************************************************/
 
 
 //需要注意的点：

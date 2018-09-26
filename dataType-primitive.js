@@ -69,12 +69,13 @@ num.toString();
 num.valueOf();
 num.toLocaleString();
 
-num.toFixed(); //按照指定的小叔返回数值的字符串表示
+num.toFixed(); //按照指定的小数返回数值的字符串表示
 	var num=10.005;
 	num.toFixed(2); //"10.01"
 num.toExponential(); //该方法返回以指数表示法表示的数值的字符串形式
 	var num=10;
 	num.toExponential(1) //"1.0e+1"
+	num.toExponential(2) //"1.00e+1"
 num.toPrecision(num); //能够得到某个最适合的数字格式的字符串表达
 	var num=99;
 	num.toPrecision(0); //argument must be between 1 and 100
@@ -221,6 +222,8 @@ str.search(searchvalue|regexp); //检索与正则表达式匹配的值，返回�
 	var pos = text.search(/at/);
 	alert(pos); //1
 
+
+//split方法
 str.split();//把字符串分割为字符串数组
 	var colorText = "red,blue,green,yellow";
     var colors1 = colorText.split(",");      //["red", "blue", "green", "yellow"]
