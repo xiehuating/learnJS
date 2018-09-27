@@ -104,7 +104,7 @@ arr.slice(start, end); //基于当前数组中的一个或多个项创建新数�
 	var colors3 = colors.slice(1,4);
 	alert(colors2); //["green","blue","yellow","purple"]
 	alert(colors3); //["green","blue","yellow"]
-arr.splice(index, howmany,item1,...,itemX); //删除元素，并向数组插入新元素，返回由被删除的元素组成的数组，并改变原数组
+arr.splice(index, howmany, item1,...,itemX); //删除元素，并向数组插入新元素，返回由被删除的元素组成的数组，并改变原数组
 	//删除
 		var colors = ["red","green","blue"];
 		var removed = colors.splice(0,1);
@@ -243,6 +243,16 @@ regexp.test(); //检索字符创中指定的值。返回true或false。
 *
 *
 */
+Function.prototype;
+func.arguments; //function.arguments 已经被废弃了, 现在推荐的做法是使用函数内部可用的 arguments 对象来访问函数的实参。
+func.caller; //该特性是非标准的，请尽量不要在生产环境中使用它！
+func.length;
+func.name;
+
+func.toString();
+func.apply();
+func.call();
+func.bind();
 
 
 

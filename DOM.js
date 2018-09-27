@@ -43,8 +43,8 @@
 	node.childNodes //返回节点的子节点集合
 	node.firstChild
 	node.lastChild
-	node.nextSibling
-	node.previousSibling
+	node.nextSibling  //易错
+	node.previousSibling  //易错
 
 
 //节点的名称、节点的值、节点的类型
@@ -100,10 +100,4 @@
 
 
 /***************************************************************************************/
-
-
-//需要注意的点：
-	//html页面的加载完成后执行JS代码。
-	//JS加载和执行的顺序
-
 
