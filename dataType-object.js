@@ -27,26 +27,181 @@
 arr.constructor;
 Array.prototype;
 arr.length;
+	var colors = ["red","blue","green"];
+	colors[colors.length] = "black"; //["red", "blue", "green", "black"]
+	colors[colors.length] = "brown"; //["red", "blue", "green", "black", "brown"]
 
-arr.toString(); //
-arr.toLocaleString(); //
-arr.valueOf(); //
+//转换方法
+arr.toString(); //返回逗号拼接的字符串
+arr.toLocaleString(); //返回逗号拼接的字符串
+arr.valueOf(); //返回数组
+arr.join(); //返回字符串，元素通过指定的分隔符进行分割
+	var colors = ["red", "green", "blue"];
+	alert( colors.join(",") ); //"red,green,blue"
+	alert( colors.join("||") ); //"red||green||blue"
 
-arr.concat(); //连接两个或更多的数组，并返回结果
-arr.join(); //把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分割
-
+//栈方法&队列方法
 arr.push(new1,new2...); //数组末尾插入一个元素，返回新数组长度
 arr.pop(); //数组末尾删除一个元素，返回删除的元素
 arr.unshift(new1,new2...); //数组开头插入一个元素，返回新数组长度
 arr.shift(); //数字开头删除一个元素，返回删除的元素
 
-arr.reverse(); //颠倒数组中元素的顺序，返回颠倒后的数组
-arr.sort(func); //？对数组的元素进行排序
+//重排序方法
+arr.reverse(); //颠倒数组中元素的顺序，返回颠倒后的数组，原数组被更新
+	var values = [1,2,3,4,5];
+	values.reverse(); //[5,4,3,2,1];
+arr.sort(func); //按升序排列数组项，返回重新排序后的数组，原数组被更新
+	//如果调用该方法时没有使用参数，将按字母顺序对数组中的元素进行排序，说得更精确点，是按照字符编码的顺序进行排序。
+	//要实现这一点，首先应把数组的元素都转换成字符串（如有必要），以便进行比较
+	var values = [0,1,5,10,15];
+	values.sort(); // [1,1,10,15,5];
 
-arr.slice(start, end); //？从某个已有的数组，返回特定的元素
-arr.splice(index, howmany,item1,...,itemX); //？删除元素，并向数组插入新元素，返回由被删除的元素组成的数组，并改变原数组
+	//如果想按照其他标准进行排序，就需要提供比较函数，该函数要比较两个值，然后返回一个用于说明这两个值的相对顺序的数字。
+	//比较函数应该具有两个参数 a 和 b，其返回值如下：
+	//	若 a 小于 b，在排序后的数组中 a 应该出现在 b 之前，则返回一个小于 0 的值。
+	//	若 a 等于 b，则返回 0。
+	//	若 a 大于 b，则返回一个大于 0 的值。
+	//升序
+		function compare(value1, value2){
+			if ( value1 < value2 ) {
+				return -1;
+			} else if ( value1 > value2 ) {
+				return 1;
+			} else {
+				return 0;
+			}
+		}
+		var values = [0,1,5,10,15];
+		values.sort(compare);
+		alert(values); //[0,1,5,10,15];
+	//降序
+		function compare(value1, value2){
+			if (value1 < value2) {
+				return 1;
+			} else if (value1 > value2) {
+				return -1;
+			} else {
+				return 0;
+			}
+		}
+		var values = [0,1,5,10,15];
+		values.sort(compare);
+		alert(values); //[15,10,5,1,0];
+	//对于数值类型可以使用更简单的函数
+		function compare(value1, value2) {
+			return value2 - value1;
+		}
+
+//操作方法
+arr.concat(); //连接两个或更多的数组，并返回结果
+	var colors = ["red","green","blue"];
+	var colors2 = colors.concat("yellow", ["black", "brown"]);
+	alert(colors); //["red","green","blue"]
+	alert(colors2); //["red","green","blue","yellow","black", "brown"]
+arr.slice(start, end); //基于当前数组中的一个或多个项创建新数组，返回数组
+	var colors = ["red","green","blue","yellow","purple"];
+	var colors2 = colors.slice(1);
+	var colors3 = colors.slice(1,4);
+	alert(colors2); //["green","blue","yellow","purple"]
+	alert(colors3); //["green","blue","yellow"]
+arr.splice(index, howmany,item1,...,itemX); //删除元素，并向数组插入新元素，返回由被删除的元素组成的数组，并改变原数组
+	//删除
+		var colors = ["red","green","blue"];
+		var removed = colors.splice(0,1);
+		alert(colors); //["green","blue"]
+		alert(removerd); //["red"]
+	//从位置1开始插入2项
+		removed = colors.splice(1, 0, "yellow", "orange");
+		alert(colors); //["green","yellow", "orange","blue"]
+		alert(removed);//[]返回空数组
+	//插入2项，删除1项
+		removed = colors.splice(1, 1, "red", "purple");
+		alert(colors); //["green", "red", "purple", "orange","blue"]
+		alert(removed); //["yellow"]
+
+//位置方法
+arr.indexOf();
+arr.lastIndexOf();
+	var numbers = [1,2,3,4,5,4,3,2,1];
+	alert(numbers.indexOf(4)); //3
+	alert(numbers.lastIndexOf(4)); //5
+	alert(numbers.indexOf(4,4)); //5
+	alert(numbers.lastIndexOf(4,4)); //3
+
+	var person = {name:"Nicholas"};
+	var people = [{name:"Nicholas"}];
+	var morePeople = [person];
+
+	alert(people.indexOf(person)); //-1
+	alert(morePeople.indexOf(person)); //0
+
+//迭代方法
+arr.every(func); //对数组中每一项运行给定函数，如果每一项返回true，则返回true
+arr.some(func); //对数组中每一项运行给定函数，如果任一项返回true，则返回true
+arr.filter(func); //对数组中每一项运行给定函数，返回该函数返回true的项组成的数组。重要
+arr.map(func); //对数组中每一项运行给定函数，返回每次调用结果组成的数组
+arr.forEach(func); //对数组中每一项运行给定函数，没有返回值，本质上和for循环迭代数组一样
+//func会接收三个参数：
+// item，数组项的值
+// index，该项在数组中的位置
+// array，数组对象本身
+	var numbers = [1,2,3,4,5,4,3,2,1];
+	var everyResult = numbers.every(function(item,index,array){
+		return (item > 2);
+	});
+	alert(everyResult); //false
+
+	var someResult = numbers.some(function(item,index,array){
+		return (item > 2);
+	})
+	alert(someResult); //true
+
+	var numbers = [1,2,3,4,5,4,3,2,1];
+	var filterResult = numbers.filter(function(item,index,array){
+		return (item > 2);
+	})
+	alert(filterResult); // [3,4,5,4,3]
+
+	var numbers = [1,2,3,4,5,4,3,2,1];
+	var mapResult = numbers.map(function(item, index, array){
+		return item*2;
+	})
+	alert(mapResult); //[2,4,6,8,10,8,6,4,2]
+
+	var numbers = [1,2,3,4,5,4,3,2,1];
+	numbers.forEach(functionn(item,index,array){
+		//执行默写操作
+	})
 
 
+//归并方法，ES5新增
+arr.reduce(func, defalutvalue); //从数组第一个项开始，逐个遍历到最后
+arr.reduceRight(func, defalutvalue); //从数组的最后一个项开始，向前遍历到第一项
+//func接收4个参数：
+//	prev，前一个值
+//	cur，当前值
+//	index，项索引
+//	array，数组对象
+//defaultvalue作为归并基础的初始值
+	var values = [1,2,3,4,5];
+	var sum = values.reduce(function(prev,cur,index,array){
+		return prev + cur;
+	})
+	alert(sum); //15
+
+	var values = [1,2,3,4,5];
+	var sum = values.reduceRight(function(prev,cur,index,array){
+		return prev + cur;
+	})
+	alert(sum); //15
+
+//检测数组
+instanceof
+	arr instanceof Array //true
+	arr instanceof Object //true
+
+Array.isArray();
+	Array.isArray(arr); //true
 
 /***************************************************************************************/
 
@@ -107,17 +262,27 @@ regexp.test(); //检索字符创中指定的值。返回true或false。
 date.constructor;
 Date.prototype;
 
-Date(); //返回当日的日期和时间
-Date.parse(); //返回1970年1月1日午夜到指定日期的毫秒数
-Date.UTC(year,month,day,hours,minutes,seconds,ms); //根据世界时间返回1970年1月1日到指定日期的毫秒数
-
+//继承的方法
 date.toString(); //把date转换为字符串
 date.toLocaleString(); //根据本地格式把date转换为字符串
 date.valueOf(); //返回date对象的原始值
 
-date.getTime(); // 返回1970年1月1日至今的毫秒数
-date.setTime(); // 以毫秒设置Date对象
-date.getTimezoneOffset(); //返回本地时间与格林威治标准时间 (GMT) 的分钟差。
+//
+Date(); //返回当日的日期和时间
+Date.now(); //返回表示调用这个方法时的日期和时间的毫秒数
+Date.parse(); //接收一个表示日期的字符串参数，然后根据这个字符串返回相应日期的毫秒数
+Date.UTC(year,month,day,hours,minutes,seconds,ms); //根据世界时间返回1970年1月1日到指定日期的毫秒数
+
+//日期格式化，与toString(),toLocaleString一样，输入格式因浏览器而异。
+date.toDateString(); //把 Date 对象的日期部分转换为字符串。
+date.toTimeString(); //把 Date 对象的时间部分转换为字符串。
+date.toLocaleDateString(); //根据本地时间格式，把 Date 对象的日期部分转换为字符串。
+date.toLocaleTimeString(); //根据本地时间格式，把 Date 对象的时间部分转换为字符串。
+date.toUTCString();  //根据世界时，把 Date 对象转换为字符串。
+
+//日期时间组件方法
+date.getTime(); // 返回表示日期的毫秒数，与valueOf()方法返回值相同
+date.setTime(); // 以毫秒设置日期，会改变整个日期
 
 date.getDate(); //返回月中的某一天，1~31
 date.getDay(); //返回周中的某一天，0~6
@@ -153,12 +318,7 @@ date.setUTCMinutes(); //
 date.setUTCSeconds(); //
 date.setUTCMilliseconds(); //
 
-date.toTimeString(); //把 Date 对象的时间部分转换为字符串。
-date.toDateString(); //把 Date 对象的日期部分转换为字符串。
-date.toLocaleTimeString(); //根据本地时间格式，把 Date 对象的时间部分转换为字符串。
-date.toLocaleDateString(); //根据本地时间格式，把 Date 对象的日期部分转换为字符串。
-date.toGMTString(); //使用toUTCString()方法代替
-date.toUTCString();  //根据世界时，把 Date 对象转换为字符串。
+date.getTimezoneOffset(); //返回本地时间与UTC时间相差的分钟数。
 
 
 
