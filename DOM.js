@@ -24,10 +24,13 @@
 
 
 //插入新的子节点（元素）、删除子节点、替换子节点、在节点前插入节点
-	parentNode.appendChild(node);
-	parentNode.removeChild(node);
-	parentNode.replaceChild(newNode, oldNode);
-	node.insertBefore(newNode);
+	parentNode.appendChild(child); //返回child
+	parentNode.removeChild(child); //返回child
+	parentNode.replaceChild(newNode, oldNode); //返回oldNode
+	parentElement.insertBefore(newElement, referenceElement); //返回newElement
+
+	element.haiChildNodes(); //表明当前节点是否包含有子节点。
+	element.normalize(); //将当前节点和它的后代节点”规范化“（normalized）。在一个"规范化"后的DOM树中，不存在一个空的文本节点，或者两个相邻的文本节点。
 
 
 //返回指定属性值、设置指定属性值
