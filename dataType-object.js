@@ -8,6 +8,32 @@
 *
 */
 
+Object.prototype;
+Object.prototype.constructor;
+
+Object.create(obj);
+Object.defineProperties(obj, props);
+Object.definePropertiy(obj, prop, descriptor);
+Object.feeeze(obj);
+
+Object.getOwnPropertyDescriptor(obj,prop);
+Object.getOwnPropertyDescriptors(obj); //ie不支持
+Object.getOwnPropertyNames(obj)；
+Object.getPrototypeOf(obj);
+Object.isFrozen(obj);
+Object.isSealed(obj);
+Object.keys(obj);
+Object.seal(obj);
+
+
+obj.hasOwnProperty(prop);
+prototypeObj.isPrototypeOf(obj);
+obj.propertyIsEnumerable(prop);
+
+obj.toLocaleString();
+obj.toString();
+obj.valueOf();
+obj.values();
 
 
 /***************************************************************************************/
@@ -50,7 +76,7 @@ arr.shift(); //数字开头删除一个元素，返回删除的元素
 arr.reverse(); //颠倒数组中元素的顺序，返回颠倒后的数组，原数组被更新
 	var values = [1,2,3,4,5];
 	values.reverse(); //[5,4,3,2,1];
-arr.sort(func); //按升序排列数组项，返回重新排序后的数组，原数组被更新
+arr.sort([compareFunction]); //按升序排列数组项，返回重新排序后的数组，原数组被更新
 	//如果调用该方法时没有使用参数，将按字母顺序对数组中的元素进行排序，说得更精确点，是按照字符编码的顺序进行排序。
 	//要实现这一点，首先应把数组的元素都转换成字符串（如有必要），以便进行比较
 	var values = [0,1,5,10,15];
@@ -280,8 +306,8 @@ date.valueOf(); //返回date对象的原始值
 //
 Date(); //返回当日的日期和时间
 Date.now(); //返回表示调用这个方法时的日期和时间的毫秒数
-Date.parse(); //接收一个表示日期的字符串参数，然后根据这个字符串返回相应日期的毫秒数
-Date.UTC(year,month,day,hours,minutes,seconds,ms); //根据世界时间返回1970年1月1日到指定日期的毫秒数
+Date.parse(); //接收一个表示日期的字符串参数，然后根据这个字符串返回相应日期的毫秒数，返回值为Number
+Date.UTC(year,month,day,hours,minutes,seconds,ms); //根据世界时间返回1970年1月1日到指定日期的毫秒数,返回值为Number
 
 //日期格式化，与toString(),toLocaleString一样，输入格式因浏览器而异。
 date.toDateString(); //把 Date 对象的日期部分转换为字符串。
@@ -310,7 +336,7 @@ date.getUTCFullYear(); //
 date.getUTCHours(); //
 date.getUTCMinutes(); //
 date.getUTCSeconds(); //
-date.getUTCMilliseconds(); //
+date.getUTCMilliseconds(); //注意S小写
 
 date.setDate(); //设置Date对象月中的某一天，1~31
 date.setMonth(); //设置Date对象的月份，0~11
