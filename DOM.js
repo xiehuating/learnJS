@@ -29,7 +29,7 @@
 	parentNode.replaceChild(newNode, oldNode); //返回oldNode
 	parentElement.insertBefore(newElement, referenceElement); //返回newElement
 
-	element.haiChildNodes(); //表明当前节点是否包含有子节点。
+	element.hasChildNodes(); //表明当前节点是否包含有子节点。
 	element.normalize(); //将当前节点和它的后代节点”规范化“（normalized）。在一个"规范化"后的DOM树中，不存在一个空的文本节点，或者两个相邻的文本节点。
 
 
@@ -56,6 +56,8 @@
 	node.nodeType; //元素 1，属性 2，文本 3，注释 8，文档 9
 
 
+
+
 //设置或者返回节点的内容
 	elementNode.innerHTML;
 
@@ -67,6 +69,8 @@
 	elementNode.className; //注意此处是className不是class
 	elementNode.id;
 	elementNode.title;
+	element.tagName;
+	element.tabIndex;
 
 
 //根节点
