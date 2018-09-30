@@ -249,6 +249,28 @@ func.caller; //该特性是非标准的，请尽量不要在生产环境中使�
 func.length;
 func.name;
 
+//函数内部两个特殊的对象：arguments，this
+arguments //数组对象，包含传入函数中的所有参数
+arguments.callee(); //是一个指向正在执行的函数指针，可以实现对函数递归的调用
+	function factorial(num) {
+		if (num <= 1) {
+			return 1;
+		} else {
+			return num * arguments.callee( num-1 ) ;
+		}
+	}
+	alert( factorial(5) ); //120
+func.caller； //这个属性中保存着调用当前函数的函数的引用。
+	function outer() {
+		inner();
+	}
+	function inner() {
+		alert (inner.caller); //为了实现更松散的耦合，可以使用arguments.callee.caller
+	}
+	outer(); //返回out函数的源代码
+
+
+	
 func.toString();
 func.apply();
 func.call();
