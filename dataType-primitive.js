@@ -76,7 +76,7 @@ num.toExponential(); //该方法返回以指数表示法表示的数值的字符
 	var num=10;
 	num.toExponential(1) //"1.0e+1"
 	num.toExponential(2) //"1.00e+1"
-num.toPrecision(num); //能够得到某个最适合的数字格式的字符串表达
+num.toPrecision(); //能够得到某个最适合的数字格式的字符串表达
 	var num=99;
 	num.toPrecision(0); //argument must be between 1 and 100
 	num.toPrecision(1); //"1e+2" 接收的参数表示所有数字的位数（不包括指数）
@@ -137,7 +137,7 @@ str.substr(start, length); //从起始索引好提取字符串中指定数目的
 	alert( stringValue.substr(3,7) );  //"lo worl"
 	alert( stringValue.substr(-3) );  //"rld"，第一个参数-3被转换为8
 	alert( stringValue.substr(3, -4) );  //""（空字符串），第二个参数-4被转换为0
-	alert( stringValue.substr(-3, -4) );  //""（空字符串）
+	alert( stringValue.substr(-3, -4) );  //""（空字符串），第一个参数-3被转换为8，第二个参数-4被转换为0
 
 str.substring(start, end); //提取字符串中两个指定的索引号之间的字符，提取出的字符串包括start不包括end
 	var stringValue = "hello world";
@@ -167,7 +167,7 @@ str.match(searchvalue|regexp); //regexp带有g则执行全局匹配，返回null
 	var pattern = /.at/;
 	var matches = text.match(pattern);
 	alert( matches.index ); //0
-	alert( matches[0] ); //"car"
+	alert( matches[0] ); //"cat"
 	alert( pattern.lastIndex ); //0
 	/*
 	 *match() 方法将检索字符串 str，以找到一个或多个与 regexp 匹配的文本。

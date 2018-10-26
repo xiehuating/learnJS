@@ -9,21 +9,28 @@
 */
 
 Object.prototype;
-Object.prototype.constructor;
+obj.constructor;
 
+Object.assign(target, source)
 Object.create(obj);
+
 Object.defineProperties(obj, props);
-Object.definePropertiy(obj, prop, descriptor);
-Object.feeeze(obj);
+Object.defineProperty(obj, prop, descriptor);
 
 Object.getOwnPropertyDescriptor(obj,prop);
 Object.getOwnPropertyDescriptors(obj); //ie不支持
+
+Object.keys(obj);
+Object.values(obj);
 Object.getOwnPropertyNames(obj)；
+
 Object.getPrototypeOf(obj);
+
+Object.freeze(obj);
+Object.seal(obj);
+
 Object.isFrozen(obj);
 Object.isSealed(obj);
-Object.keys(obj);
-Object.seal(obj);
 
 
 obj.hasOwnProperty(prop);
@@ -33,7 +40,7 @@ obj.propertyIsEnumerable(prop);
 obj.toLocaleString();
 obj.toString();
 obj.valueOf();
-obj.values();
+
 
 
 /***************************************************************************************/
@@ -67,10 +74,10 @@ arr.join(); //返回字符串，元素通过指定的分隔符进行分割
 	alert( colors.join("||") ); //"red||green||blue"
 
 //栈方法&队列方法
-arr.push(new1,new2...); //数组末尾插入一个元素，返回新数组长度
-arr.pop(); //数组末尾删除一个元素，返回删除的元素
-arr.unshift(new1,new2...); //数组开头插入一个元素，返回新数组长度
-arr.shift(); //数字开头删除一个元素，返回删除的元素
+arr.push(new1,new2...); //数组末尾插入元素，返回新数组长度，原数组被更新
+arr.pop(); //数组末尾删除一个元素，返回删除的元素，原数组被更新
+arr.unshift(new1,new2...); //数组开头插入元素，返回新数组长度，原数组被更新
+arr.shift(); //数字开头删除一个元素，返回删除的元素，原数组被更新
 
 //重排序方法
 arr.reverse(); //颠倒数组中元素的顺序，返回颠倒后的数组，原数组被更新
@@ -124,7 +131,7 @@ arr.concat(); //连接两个或更多的数组，并返回结果
 	var colors2 = colors.concat("yellow", ["black", "brown"]);
 	alert(colors); //["red","green","blue"]
 	alert(colors2); //["red","green","blue","yellow","black", "brown"]
-arr.slice(start, end); //基于当前数组中的一个或多个项创建新数组，返回数组
+arr.slice(start, end); //基于当前数组中的一个或多个项创建新数组，返回新数组
 	var colors = ["red","green","blue","yellow","purple"];
 	var colors2 = colors.slice(1);
 	var colors3 = colors.slice(1,4);
@@ -157,7 +164,6 @@ arr.lastIndexOf();
 	var person = {name:"Nicholas"};
 	var people = [{name:"Nicholas"}];
 	var morePeople = [person];
-
 	alert(people.indexOf(person)); //-1
 	alert(morePeople.indexOf(person)); //0
 
@@ -196,7 +202,7 @@ arr.forEach(func); //对数组中每一项运行给定函数，没有返回值�
 
 	var numbers = [1,2,3,4,5,4,3,2,1];
 	numbers.forEach(functionn(item,index,array){
-		//执行默写操作
+		//执行某些操作
 	})
 
 
@@ -221,11 +227,12 @@ arr.reduceRight(func, defalutvalue); //从数组的最后一个项开始，向�
 	})
 	alert(sum); //15
 
+
 //检测数组
 instanceof
 	arr instanceof Array //true
 	arr instanceof Object //true
-
+	
 Array.isArray();
 	Array.isArray(arr); //true
 
@@ -243,6 +250,8 @@ Array.isArray();
 *
 */
 
+RegExp.prototype;
+
 regexp.global; //RegExp对象是否有标志g
 regexp.ignoreCase; //RegExp对象是否有标志i
 regexp.multiline; //RegExp对象是否具有标志m
@@ -250,7 +259,9 @@ regexp.multiline; //RegExp对象是否具有标志m
 regexp.lastIndex; //一个整数，标示开始下一次匹配的字符位置
 regexp.source; //正则表达式原文本。
 
-regexp.compile(); //编译正则表达式
+regexp.toString();
+
+regexp.compile(); //编译正则表达式，已废弃
 regexp.exec(); //检索字符串中指定的值。返回找到的值，并确定其位置
 regexp.test(); //检索字符创中指定的值。返回true或false。
 
@@ -272,8 +283,14 @@ regexp.test(); //检索字符创中指定的值。返回true或false。
 Function.prototype;
 func.arguments; //function.arguments 已经被废弃了, 现在推荐的做法是使用函数内部可用的 arguments 对象来访问函数的实参。
 func.caller; //该特性是非标准的，请尽量不要在生产环境中使用它！
-func.length;
+func.length; //函数形参的个数
 func.name;
+
+func.toString();
+
+func.apply();
+func.call();
+func.bind();
 
 //函数内部两个特殊的对象：arguments，this
 arguments //数组对象，包含传入函数中的所有参数
@@ -295,12 +312,9 @@ func.caller； //这个属性中保存着调用当前函数的函数的引用。
 	}
 	outer(); //返回out函数的源代码
 
+arguments.caller; //该属性已经不可使用了，请使用func.caller
+arguments.length;
 
-	
-func.toString();
-func.apply();
-func.call();
-func.bind();
 
 
 
@@ -395,17 +409,17 @@ date.getTimezoneOffset(); //返回本地时间与UTC时间相差的分钟数。
 *
 */
 
-Math.E; //返回算数常量2，即自然对数的底数（约等于2.718）
+Math.E; //返回算数常量e，即自然对数的底数（约等于2.718）
 Math.LN2; //返回2的自然对数（约等于0.693）
 Math.LN10; //返回10的自然对数，与等于2.302
-Math.LOG2E; //返回以2为底数的2的对数，约等于1.414
+Math.LOG2E; //返回以2为底数的2的对数，约等于1.44
 Math.LOG10E; //返回以10为底数的e的对数，约等于0.434
 Math.PI; //返回圆周率，约等于3.1415
 Math.SQRT1_2; //返回2的平方根的倒数，约等于0.707
 Math.SQRT2; //返回2的平方根，约等于1.414
 
 
-Math.toSource();
+Math.toSource(); //还未被标准化
 Math.valueOf();
 
 
