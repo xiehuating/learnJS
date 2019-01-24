@@ -10,7 +10,7 @@
 
 //查找HTML元素
 	document.getElementById("id");
-	node.getElementsByTagName("tagnName"); 
+	node.getElementsByTagName("tagName"); 
 	node.getElementsByClassName("classname"|"classname classname"); //返回所有包含classname的元素节点。
 
 	node.querySelector("CssSelector"); //返回匹配css选择器的第一个元素节点
@@ -60,6 +60,7 @@
 
 //设置或者返回节点的内容
 	elementNode.innerHTML;
+	elementNode.innerText;
 
 //设置或返回节点及其后代的文本内容
 	elementNode.textContent;
@@ -108,3 +109,5 @@
 
 /***************************************************************************************/
 
+document.hasFocus();
+document.activeElement;

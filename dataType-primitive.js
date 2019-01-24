@@ -33,9 +33,10 @@
 *
 *
 */
-bool.constructor;
+
 Boolean.prototype;
 
+bool.constructor;
 bool.toString();
 bool.valueOf();
 
@@ -53,7 +54,6 @@ bool.valueOf();
 *
 */
 
-num.constructor;
 Number.prototype; //可以给Number构造函数设置prototype中的属性和方法
 //表示最大数、最小数
 Number.MAX_VALUE;
@@ -65,8 +65,9 @@ Number.NEGATIVE_INFINITY; //-Infinity
 Number.POSITIVE_INFINITY; //Infinity
 
 //
-num.toString();
+num.constructor;
 num.valueOf();
+num.toString();
 num.toLocaleString();
 
 num.toFixed(); //按照指定的小数返回数值的字符串表示
@@ -98,15 +99,22 @@ num.toPrecision(); //能够得到某个最适合的数字格式的字符串表�
 */
 
 //字符串属性
-str.constructor;
-str.length;
+
 String.prototype; //可以给String构造函数设置prototype中的属性和方法
 
+
+//从字符编码转换成字符串方法
+String.fromCharCode(num1,num2,...,numN);
+	String.fromCharCode(97,98,99,100); //"abcd"
+
+str.constructor;
+str.valueOf();
 str.toString();
 str.toLocaleString();
-str.valueOf();
 
-//字符方法
+str.length;
+
+//字符串中根据位置查找字符
 str.charAt(index);
 	var stringValue = "hello world";
 	alert(stringValue.chatAt(1)); //"e"
@@ -116,7 +124,7 @@ str.charCodeAt(index);
 	var stringValue = "hello world";
 	alert(stringValue.charCodeAt(1)); //"101",e字母的unicode编码
 
-//字符串操作方法
+//字符串的操作方法：连接，提取
 str.concat("sting","sting",...,"string"); //使用 " + " 运算符来进行字符串的连接运算通常会更简便一些。
 	var stringValue = "hello ";
 	var result = stringValue.concat("world", "!");
@@ -152,16 +160,16 @@ str.trim(); //删除字符串前置和后缀的所有空格
 	var trimmedStringValue = stringValue.trim();
 	alert( trimmedStringValue ); //"hello world"
 
-//字符串位置方法
+//字符串中查找字符位置
 str.indexOf(searchvalue, fromindex); //从指定位置向后搜索
 str.lastIndexOf(searchvalue, fromindex); //从指定位置向前搜索
 	var stringValue = "hello world";
 	alert( stringValue.indexOf("o") ); //4
 	alert( stringValue.lastIndexOf("o") ); //7
 	alert( stringValue.indexOf("o", 6) ); //7
-	alert( stringValue.indexOf("o", 6) ); //4
+	alert( stringValue.lastIndexOf("o", 6) ); //4
 
-//字符串模糊匹配方法
+//字符串的模糊匹配方法
 str.match(searchvalue|regexp); //regexp带有g则执行全局匹配，返回null或者匹配的字符串值的数组（此方法与调用RegExp的exec方法相同）；不带有g则返回null或者一个存放其他相关信息的数组。
 	var text = "cat, bat, sat, fat";
 	var pattern = /.at/;
@@ -229,7 +237,7 @@ str.search(searchvalue|regexp); //检索与正则表达式匹配的值，返回�
 	alert(pos); //1
 
 
-//split方法
+//split方法，字符串分割成数组
 str.split([separator[, limit]]);//把字符串分割为字符串数组
 	var colorText = "red,blue,green,yellow";
     var colors1 = colorText.split(",");      //["red", "blue", "green", "yellow"]
@@ -246,10 +254,6 @@ str.toUpperCase();
 //比较字符串方法
 str.localeCompare(compareString);
 
-
-//从字符编码转换成字符串方法
-String.fromCharCode(num1,num2,...,numN);
-	String.fromCharCode(97,98,99,100); //"abcd"
 
 
 /***************************************************************************************/

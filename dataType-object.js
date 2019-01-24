@@ -126,7 +126,7 @@ arr.sort([compareFunction]); //按升序排列数组项，返回重新排序后�
 		}
 
 //操作方法
-arr.concat(); //连接两个或更多的数组，并返回结果
+arr.concat(); //连接两个或更多的数组，并返回结果，不改变原数组
 	var colors = ["red","green","blue"];
 	var colors2 = colors.concat("yellow", ["black", "brown"]);
 	alert(colors); //["red","green","blue"]
