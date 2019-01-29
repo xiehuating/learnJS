@@ -39,6 +39,7 @@ Boolean.prototype;
 bool.constructor;
 bool.toString();
 bool.valueOf();
+bool.toLocaleString();
 
 
 

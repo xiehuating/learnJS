@@ -9,20 +9,20 @@
 */
 
 Object.prototype;
-obj.constructor;
 
-Object.assign(target, source)
-Object.create(obj);
 
-Object.defineProperties(obj, props);
-Object.defineProperty(obj, prop, descriptor);
+Object.assign(target, source) //通过复制一个或多个对象来创建一个新的对象。
+Object.create(obj); //使用指定的原型对象和属性创建一个新对象。
 
-Object.getOwnPropertyDescriptor(obj,prop);
+Object.defineProperties(obj, props); //?
+Object.defineProperty(obj, prop, descriptor); //?
+
+Object.getOwnPropertyDescriptor(obj,prop); //?
 Object.getOwnPropertyDescriptors(obj); //ie不支持
 
-Object.keys(obj);
+Object.keys(obj); //返回一个包含所有给定对象自身可枚举属性名称的数组。
 Object.values(obj);
-Object.getOwnPropertyNames(obj)；
+Object.getOwnPropertyNames(obj)； //返回一个包含所有给定对象自身可枚举或不可枚举的属性名称的数组。
 
 Object.getPrototypeOf(obj);
 
@@ -32,9 +32,9 @@ Object.seal(obj);
 Object.isFrozen(obj);
 Object.isSealed(obj);
 
-
+obj.constructor;
 obj.hasOwnProperty(prop);
-prototypeObj.isPrototypeOf(obj);
+obj.isPrototypeOf(obj);
 obj.propertyIsEnumerable(prop);
 
 obj.toLocaleString();
@@ -131,13 +131,13 @@ arr.concat(); //连接两个或更多的数组，并返回结果，不改变原�
 	var colors2 = colors.concat("yellow", ["black", "brown"]);
 	alert(colors); //["red","green","blue"]
 	alert(colors2); //["red","green","blue","yellow","black", "brown"]
-arr.slice(start, end); //基于当前数组中的一个或多个项创建新数组，返回新数组
+arr.slice(start, end); //基于当前数组中的一个或多个项创建新数组，不改变原数组，返回新数组
 	var colors = ["red","green","blue","yellow","purple"];
 	var colors2 = colors.slice(1);
 	var colors3 = colors.slice(1,4);
 	alert(colors2); //["green","blue","yellow","purple"]
 	alert(colors3); //["green","blue","yellow"]
-arr.splice(index, howmany, item1,...,itemX); //删除元素，并向数组插入新元素，返回由被删除的元素组成的数组，并改变原数组
+arr.splice(index, howmany, item1,...,itemX); //删除元素，并向数组插入新元素，返回由被删除的元素组成的数组，并改变原数组，返回新数组
 	//删除
 		var colors = ["red","green","blue"];
 		var removed = colors.splice(0,1);
@@ -171,7 +171,7 @@ arr.lastIndexOf();
 arr.every(func); //对数组中每一项运行给定函数，如果每一项返回true，则返回true
 arr.some(func); //对数组中每一项运行给定函数，如果任一项返回true，则返回true
 arr.filter(func); //对数组中每一项运行给定函数，返回该函数返回true的项组成的数组。重要
-arr.map(func); //对数组中每一项运行给定函数，返回每次调用结果组成的数组
+arr.map(func); //对数组中每一项运行给定函数，返回每次调用结果组成的数组（true、false组成的数组）
 arr.forEach(func); //对数组中每一项运行给定函数，没有返回值，本质上和for循环迭代数组一样
 //func会接收三个参数：
 // item，数组项的值
@@ -281,6 +281,7 @@ regexp.test(); //检索字符创中指定的值。返回true或false。
 *
 */
 Function.prototype;
+
 func.arguments; //function.arguments 已经被废弃了, 现在推荐的做法是使用函数内部可用的 arguments 对象来访问函数的实参。
 func.caller; //该特性是非标准的，请尽量不要在生产环境中使用它！
 func.length; //函数形参的个数
@@ -331,19 +332,19 @@ arguments.length;
 *
 */
 
-date.constructor;
 Date.prototype;
+
+Date(); //返回当日的日期和时间
+Date.now(); //返回表示调用这个方法时的日期和时间的毫秒数
+Date.parse(); //接收一个表示日期的字符串参数，然后根据这个字符串返回相应日期的毫秒数，返回值为Number
+Date.UTC(year,month,day,hours,minutes,seconds,ms); //根据世界时间返回1970年1月1日到指定日期的毫秒数,返回值为Number
+
+date.constructor;
 
 //继承的方法
 date.toString(); //把date转换为字符串
 date.toLocaleString(); //根据本地格式把date转换为字符串
 date.valueOf(); //返回date对象的原始值
-
-//
-Date(); //返回当日的日期和时间
-Date.now(); //返回表示调用这个方法时的日期和时间的毫秒数
-Date.parse(); //接收一个表示日期的字符串参数，然后根据这个字符串返回相应日期的毫秒数，返回值为Number
-Date.UTC(year,month,day,hours,minutes,seconds,ms); //根据世界时间返回1970年1月1日到指定日期的毫秒数,返回值为Number
 
 //日期格式化，与toString(),toLocaleString一样，输入格式因浏览器而异。
 date.toDateString(); //把 Date 对象的日期部分转换为字符串。
@@ -468,6 +469,16 @@ Math.random(); //返回0~1的随机数
 *
 *
 */
+
+undefined
+NaN
+Infinity
+
+encodeURI();
+encodeURIComponent();
+
+
+
 eval();
 isFinite();
 isNaN();
