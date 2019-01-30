@@ -21,10 +21,11 @@ Object.getOwnPropertyDescriptor(obj,prop); //?
 Object.getOwnPropertyDescriptors(obj); //ie不支持
 
 Object.keys(obj); //返回一个包含所有给定对象自身可枚举属性名称的数组。
-Object.values(obj);
 Object.getOwnPropertyNames(obj)； //返回一个包含所有给定对象自身可枚举或不可枚举的属性名称的数组。
 
-Object.getPrototypeOf(obj);
+Object.values(obj);
+
+Object.getPrototypeOf(obj); // Object.getPrototypeOf(person1) == Person.prototype; 返回true
 
 Object.freeze(obj);
 Object.seal(obj);
@@ -33,8 +34,9 @@ Object.isFrozen(obj);
 Object.isSealed(obj);
 
 obj.constructor;
+
 obj.hasOwnProperty(prop);
-obj.isPrototypeOf(obj);
+obj.isPrototypeOf(obj); //Person.prototype.isPrototypeOf(person1); 返回true
 obj.propertyIsEnumerable(prop);
 
 obj.toLocaleString();
