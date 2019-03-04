@@ -78,3 +78,9 @@ alert( person1.friends ); //"shelby, Count, Van"
 alert( person2.friends ); //"shelby, Count"
 alert( persoon1.friends === person2.friends ); //false
 alert( person1.sayName === person2.sayName ); //true
+
+
+
+//
+( element == "ab" ) && ( array[ index ] = "**" ); // 等价于 if ( element == "ab" ) array[ index ] = "**"
+

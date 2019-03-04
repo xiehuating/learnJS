@@ -25,7 +25,7 @@
 
 //插入新的子节点（元素）、删除子节点、替换子节点、在节点前插入节点
 	parentNode.appendChild(child); //返回child
-	parentNode.removeChild(child); //返回child
+	parentNode.removeChild(child); //返回被删除的child
 	parentNode.replaceChild(newNode, oldNode); //返回oldNode
 	parentElement.insertBefore(newElement, referenceElement); //返回newElement
 

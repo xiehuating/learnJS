@@ -39,6 +39,9 @@ document.documentElement.clientHeight;
 document.body.clientWidth;
 document.body.clientHeight;
 
+element.clientWidth;
+element.clientHeight;
+
 window.resizeTo(width, height);
 window.resizeBy(width, height);
 
@@ -51,11 +54,11 @@ window.open();
 	wroxWin.close();
 
 //间歇调用和超时调用
-window.setInterval();
+window.setInterval( func, delay[, param1, param2, ...] );
 window.clearInterval();
 
-window.setTimeout();
-window.cleartimeout();
+window.setTimeout( func[, delay, param1, param2, ...] );
+window.clearTimeout();
 
 window.requestAnimationFrame();
 
@@ -165,7 +168,7 @@ window.location.hostname; //返回服务器名称，“www.wrox.com”
 window.location.href; //返回完整URL
 window.location.pathname; //返回URL中的目录和文件名，“/WileyCDA/”
 window.location.port; //返回端口，“8080”
-window.location.rotocol; //返回使用协议，“http://”
+window.location.protocol; //返回使用协议，“http://”
 window.location.search; //返回URL查询字符串，“？q=javascript”
 
 window.location.assign("http://www.baidu.com"); //改变访问页面
