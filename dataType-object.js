@@ -11,8 +11,8 @@
 Object.prototype;
 
 
-Object.assign(target, source) //通过复制一个或多个对象来创建一个新的对象。
-Object.create(obj); //使用指定的原型对象和属性创建一个新对象。
+Object.assign( target, source ) //通过复制一个或多个对象来创建一个新的对象。
+Object.create( obj ); //使用指定的原型对象和属性创建一个新对象。返回新对象。括号中对象为新对象的原型属性。
 
 Object.defineProperties(obj, props); //?
 Object.defineProperty(obj, prop, descriptor); //?
@@ -213,11 +213,11 @@ arr.forEach(func); //对数组中每一项运行给定函数，没有返回值�
 arr.reduce(func, defalutvalue); //从数组第一个项开始，逐个遍历到最后
 arr.reduceRight(func, defalutvalue); //从数组的最后一个项开始，向前遍历到第一项
 //func接收4个参数：
-//	prev，前一个值
-//	cur，当前值
-//	index，项索引
-//	array，数组对象
-//defaultvalue作为归并基础的初始值
+	//prev，前一个值
+	//cur，当前值
+	//index，项索引
+	//array，数组对象
+	//defaultvalue作为归并基础的初始值
 	var values = [1,2,3,4,5];
 	var sum = values.reduce(function(prev,cur,index,array){
 		return prev + cur;
@@ -231,8 +231,8 @@ arr.reduceRight(func, defalutvalue); //从数组的最后一个项开始，向�
 	alert(sum); //15
 
 //ES6
-arr.findIndex();
-arr.find();
+arr.findIndex(); //ie不支持
+arr.find(); //ie不支持
 
 //检测数组
 instanceof
@@ -270,8 +270,20 @@ regexp.toLocaleString();
 regexp.valueOf();
 
 regexp.compile(); //编译正则表达式，已废弃
-regexp.exec(); //检索字符串中指定的值。返回找到的值，并确定其位置
-regexp.test(); //检索字符创中指定的值。返回true或false。
+regexp.exec(); 
+	//检索字符串中指定的值。返回一个数组，并更新正则表达式对象的属性，找到的值作为文本第一项，并确定其位置
+	//匹配失败返回null
+	//执行一次后会更新regexp.lastIndex属性值
+	var re = /quick\s(brown).+?(jumps)/ig;
+	var result = re.exec('The Quick Brown Fox Jumps Over The Lazy Dog');
+	//["Quick Brown Fox Jumps", "Brown", "Jumps", index: 4, input: "The Quick Brown Fox Jumps Over The Lazy Dog" ]
+	//[0]			匹配的全部字符串
+	//[1], ...[n ]	括号中的分组捕获
+	//index			匹配到的字符位于原始字符串的基于0的索引值
+	//input	原始字符串
+
+regexp.test(); 
+	//检索字符创中指定的值。如果正则表达式与指定的字符串匹配，返回true；否则返回false。
 
 
 
@@ -296,10 +308,21 @@ func.length; //函数形参的个数
 func.name;
 
 func.toString();
+func.toLocaleString();
+func.valueOf();
 
 func.apply();
 func.call();
+	//在特定的作用域中调用函数
 func.bind();
+	//这个方法会创建一个函数的实例，其this值会被绑定到传给bind()函数的值。
+	window.color = "red";
+	var o = { color: "blue" };
+	function sayColor(){
+		alert( this.color );
+	}
+	var objectSayColor = sayColor.bind( o );
+	objectSayColor(); //blue
 
 //函数内部两个特殊的对象：arguments，this
 arguments //数组对象，包含传入函数中的所有参数
@@ -312,7 +335,9 @@ arguments.callee(); //是一个指向正在执行的函数指针，可以实现�
 		}
 	}
 	alert( factorial(5) ); //120
-//func.caller； //这个属性中保存着调用当前函数的函数的引用。
+
+arguments.cellee.caller
+func.caller； //这个属性中保存着调用当前函数的函数的引用。
 	function outer() {
 		inner();
 	}
@@ -439,6 +464,7 @@ Math.atan(x); //以介于 -PI/2 与 PI/2 弧度之间的数值来返回 x 的反
 Math.atan2(y,x); //？返回从 x 轴到点 (x,y) 的角度（介于 -PI/2 与 PI/2 弧度之间）。
 
 Math.abs(x); //返回数的绝对值
+
 Math.round(x); //把数四舍五入为最接近的整数。
 Math.ceil(x); //把数进行上舍入
 Math.floor(x); //把数进行下舍入

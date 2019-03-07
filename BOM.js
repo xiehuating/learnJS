@@ -48,6 +48,7 @@ window.resizeBy(width, height);
 
 //导航和打开窗口
 window.open();
+window.close();
 	var wroxWin = window.open( "http://www.wrox.com", "wroxWindow", "height=400,width=400,top=10,left=10,resizeable=yes" );
 	wronWin.resizeTo(500,500);
 	wroxWin.moveTo(100,100);
@@ -162,14 +163,17 @@ window.history.length; //返回历史记录数量
 
 window.location; //与document.location等价
 
-window.location.hash; //返回URL中hash“#contents”
+window.location.href; //返回完整URL
+
+window.location.protocol; //返回使用协议，“http://”
 window.location.host; //返回服务器名称和端口，“www.wrox.com:8080”
 window.location.hostname; //返回服务器名称，“www.wrox.com”
-window.location.href; //返回完整URL
-window.location.pathname; //返回URL中的目录和文件名，“/WileyCDA/”
 window.location.port; //返回端口，“8080”
-window.location.protocol; //返回使用协议，“http://”
+window.location.pathname; //返回URL中的目录和文件名，“/WileyCDA/”
+
+window.location.hash; //返回URL中hash“#contents”
 window.location.search; //返回URL查询字符串，“？q=javascript”
+
 
 window.location.assign("http://www.baidu.com"); //改变访问页面
 

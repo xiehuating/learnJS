@@ -46,11 +46,18 @@ xhr.readyState
 xhr.responseText //作为响应主体被返回的文本。无论内容类型是什么，响应主体内容会被保存到该属性中。
 xhr.responseXML //作为响应主体被返回的XML DOM文档。非xml数据，该属性值将为null。
 xhr.status //响应的HTTP状态
+	//信息响应：100
+	//成功响应：200
+	//重定向：300
+	//客户端响应:400
+	//服务端响应：500
 xhr.statusText //响应的HTTP状态说明，跨浏览器使用时不太可靠
 
 xhr.response
 xhr.responseType
 xhr.responseURL
+
+xhr.upload
 
 
 
@@ -84,7 +91,7 @@ xhr.open(method,url,async);
 	//post请求：常用于向服务器发送应该被保存的数据
 		//post请求应该把数据作为请求的主体提交，而get请求传统上不是这样。
 		//post请求的主体可以包含非常多的数据，而且格式不限。
-		//post请求发送第一步：xhr.open( "post", "example", true )
+		//post请求发送第一步：xhr.open( "post", "example.php", true )
 		//post请求发送第二部：向send()方法中传入某些数据。
 
 
@@ -106,7 +113,7 @@ xhr.send(string);
 		if ( ( xhr.status >= 200 && xhr.status < 300 ) || xhr.status == 304 ) {
 			alert( xhr.responseText );
 		} else {
-			alert( "Request was unsuccessfalu: " + shr.status );
+			alert( "Request was unsuccessful: " + xhr.status );
 		}
 
 
