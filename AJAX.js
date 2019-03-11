@@ -55,9 +55,11 @@ xhr.statusText //响应的HTTP状态说明，跨浏览器使用时不太可靠
 
 xhr.response
 xhr.responseType
-xhr.responseURL
+xhr.responseURL //返回响应的序列化URL或空字符串。ie不支持。
+	//当URL被返回的时候，任何包含在URL # 后面的fragment都会被删除。 
+	//responseURL 的值将会是经过任意多次重定向后的最终 URL 。
 
-xhr.upload
+xhr.upload //跨浏览器支持不明确
 
 
 
@@ -119,7 +121,7 @@ xhr.send(string);
 
 xhr.abort();
 	//在接收到响应之前还可以调用abort()方法来取消异步请求。
-	//调用这个方法后，xhr对象会停止触发事件，而且也不在允许访问任何与响应有关的对象属性。
+	//调用这个方法后，xhr对象会停止触发事件，而且也不再允许访问任何与响应有关的对象属性。
 
 
 xhr.setRequestHeader();
