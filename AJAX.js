@@ -186,7 +186,7 @@ xhr.onprogress //重要。在接收响应期间持续不断的触发
 	//event.position属性表示已接收的字节数
 	//event.totalSize属性表示根据Content-Length响应头部确定的预期字节数
 
-xhr.onabort //在因为调用abort()方法而终止连接是触发
+xhr.onabort //在因为调用abort()方法而终止连接时触发
 xhr.onerror //在请求发生错误时触发
 
 //超时事件

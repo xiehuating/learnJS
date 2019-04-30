@@ -4,7 +4,7 @@ $			匹配输入的末尾				/end$/ 匹配 "This is the end"
 
 *			匹配0次或多次					/se*/ 匹配 "s"，"seeeee"和"se"
 ?			匹配0次或1次					/ap?/ 匹配 "apple"
-+			匹配1次或多次					/ap+/ 匹配 "apple" 但是不匹配 "apie"
++			匹配1次或多次					/ap+/ 匹配 "apple" 但是不匹配 "aie"
 
 {n}			严格匹配n次 					/ap{2}/ 匹配 "apple" 但是不匹配 "apie"
 {n,}		严格匹配n次或多次				/ap{2,}/ 匹配 "apple" 和 "appple"
