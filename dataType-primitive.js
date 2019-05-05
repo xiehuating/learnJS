@@ -205,16 +205,17 @@ str.replace(regexp|substr, newSubStr|function); //替换与正则表达式匹配
 	alert(result); //"cond,bat,sat,fat";
 	result = text.replace(/at/g, "ond");
 	alert(result);//"cond,bond,sond,fond"
+	
 	// 第二个参数是字符串可以使用特殊的字符序列：
 	// $$, 允许替换中有一个字面值美元符号
 	// $&, 插入匹配的子字符串
 	// $', 在匹配之前插入字符串的一部分
 	// $`, 在匹配之后插入字符串的一部分
 	// $n, 插入使用RegExp的第n次捕获圆括号的值
-
 	var text = "cat,bat,sat,fat";
 	result = text.replace(/(.at)/g,"word ($1)");  
 	alert(result); // world (cat), world (bat), world (sat), world (fat)
+	
 	// 第二个参数也可以是一个函数
 	// 每个匹配都会调用该函数, 函数返回的字符串替换匹配的文本
 	// 函数的参数：

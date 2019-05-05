@@ -11,7 +11,7 @@
 Object.prototype;
 
 
-Object.assign( target, source ) //通过复制一个或多个对象来创建一个新的对象。
+Object.assign( target, source ) //用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。
 Object.create( obj ); //使用指定的原型对象和属性创建一个新对象。返回新对象。括号中对象为新对象的原型属性。
 
 Object.defineProperties(obj, props); //?
@@ -22,8 +22,10 @@ Object.getOwnPropertyDescriptors(obj); //ie不支持
 
 Object.keys(obj); //返回一个包含所有给定对象自身可枚举属性名称的数组。
 Object.getOwnPropertyNames(obj)； //返回一个包含所有给定对象自身可枚举或不可枚举的属性名称的数组。
+	// 使用for-in循环时，返回所有能够通过对象访问的、可枚举的属性。即包括实例中的属性也包括原型中的属性
+	// 单独使用in操作符时，会在通过对象能够访问给定属性时返回true，无论该属性存在于实例中还是原型中。
 
-Object.values(obj);
+Object.values(obj); //方法返回一个给定对象自身的所有可枚举属性值的数组，值的顺序与使用for...in循环的顺序相同。
 
 Object.getPrototypeOf(obj); // Object.getPrototypeOf(person1) == Person.prototype; 返回true
 
@@ -35,13 +37,17 @@ Object.isSealed(obj);
 
 obj.constructor;
 
-obj.hasOwnProperty(prop);
-obj.isPrototypeOf(obj); //Person.prototype.isPrototypeOf(person1); 返回true
-obj.propertyIsEnumerable(prop);
-
 obj.toLocaleString();
 obj.toString();
 obj.valueOf();
+
+obj.hasOwnProperty(prop); //返回一个布尔值，指示对象自身属性中是否具有指定的属性
+	//同时使用hasOwnProperty()方法和in操作符，可以确定该属性存在于对象中还是存在于原型中
+	function hasPrototypeProperty( object, name ) {
+		return !object.hasOwnProperty(name) || ( name in object );
+	}
+obj.isPrototypeOf(obj); //Person.prototype.isPrototypeOf(person1); 返回true
+obj.propertyIsEnumerable(prop); //返回一个布尔值，表示指定的属性是否可枚举。
 
 
 
@@ -140,7 +146,7 @@ arr.slice(start, end); //基于当前数组中的一个或多个项创建新数�
 	var colors3 = colors.slice(1,4);
 	alert(colors2); //["green","blue","yellow","purple"]
 	alert(colors3); //["green","blue","yellow"]
-arr.splice(index, howmany, item1,...,itemX); //删除元素，并向数组插入新元素，返回由被删除的元素组成的数组，并改变原数组，返回新数组
+arr.splice(index, howmany, item1,...,itemX); //删除元素，并向数组插入新元素，返回由被删除的元素组成的数组，并改变原数组
 	//删除
 		var colors = ["red","green","blue"];
 		var removed = colors.splice(0,1);
@@ -171,10 +177,10 @@ arr.lastIndexOf();
 	alert(morePeople.indexOf(person)); //0
 
 //迭代方法
-arr.every(func); //对数组中每一项运行给定函数，如果每一项返回true，则返回true
-arr.some(func); //对数组中每一项运行给定函数，如果任一项返回true，则返回true
-arr.filter(func); //对数组中每一项运行给定函数，返回该函数返回true的项组成的数组。重要
-arr.map(func); //对数组中每一项运行给定函数，返回每次调用结果组成的数组
+arr.every(func);   //对数组中每一项运行给定函数，如果每一项返回true，则返回true
+arr.some(func);    //对数组中每一项运行给定函数，如果任一项返回true，则返回true
+arr.filter(func);  //对数组中每一项运行给定函数，返回该函数返回true的项组成的数组。重要
+arr.map(func);     //对数组中每一项运行给定函数，返回每次调用结果组成的数组
 arr.forEach(func); //对数组中每一项运行给定函数，没有返回值，本质上和for循环迭代数组一样
 //func会接收三个参数：
 // item，数组项的值
@@ -231,8 +237,18 @@ arr.reduceRight(func, defalutvalue); //从数组的最后一个项开始，向�
 	alert(sum); //15
 
 //ES6
-arr.findIndex(); //ie不支持
-arr.find(); //ie不支持
+arr.findIndex(callback[, thisArg]); //ie不支持，方法返回数组中满足提供的测试函数的第一个元素的索引。
+	//callback针对数组中的每个元素, 都会执行该回调函数, 执行时会自动传入下面三个参数:
+	//element: 当前元素。
+	//index: 当前元素的索引。
+	//array: 调用findIndex的数组。
+	//thisArg: 可选。执行callback时作为this对象的值.
+	var array1 = [5, 12, 8, 130, 44];
+	array1.findIndex( function(element, index, array){return element > 13;} ) //expected output: 3
+
+arr.find(allback[, thisArg]); //ie不支持，返回数组中满足提供的测试函数的第一个元素的值。否则返回 undefined。
+	var array1 = [5, 12, 8, 130, 44];
+	array1.find( function(element, index, array){return element > 13;} ) //expected output: 130
 
 //检测数组
 instanceof
@@ -302,8 +318,9 @@ regexp.test();
 */
 Function.prototype;
 
-//func.arguments; //function.arguments 已经被废弃了, 现在推荐的做法是使用函数内部可用的 arguments 对象来访问函数的实参。
+//func.arguments; //已经被废弃了, 现在推荐的做法是使用函数内部可用的 arguments 对象来访问函数的实参。
 //func.caller; //该特性是非标准的，请尽量不要在生产环境中使用它！
+
 func.length; //函数形参的个数
 func.name;
 
@@ -505,9 +522,6 @@ undefined
 NaN
 Infinity
 
-encodeURI();
-encodeURIComponent();
-
 
 
 eval();
@@ -515,7 +529,7 @@ isFinite();
 isNaN();
 
 //转型函数-转换为数值
-Number();
+Number(); //数字字符串可以被转换成数字，空字符串、null、false被转换成0，true转换成1
 	Number("000011"); //11
 	Number("1234blue"); //NaN
 	Number("Hello world"); //NaN
@@ -524,7 +538,7 @@ Number();
 	Number(undefined); //NaN
 	Number(true); //1
 	Number(false); //0
-parseInt(); //转换为数字时比Number()更常用
+parseInt(); //转换为数字时比Number()更常用，数字、数字开头的字符串可以被转换成整数。
 	parseInt(22.5); //22
 	parseInt("22.5"); //22
 	parseInt("1234blue"); //1234
