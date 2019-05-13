@@ -384,14 +384,14 @@ arguments.length;
 
 Date.prototype;
 
-Date(); //返回当日的日期和时间
+Date(); //返回当日的日期和时间，不加new返回字符串，加new返回object对象
 Date.now(); //返回表示调用这个方法时的日期和时间的毫秒数
 Date.parse(); //接收一个表示日期的字符串参数，然后根据这个字符串返回相应日期的毫秒数，返回值为Number
 Date.UTC(year,month,day,hours,minutes,seconds,ms); //根据世界时间返回1970年1月1日到指定日期的毫秒数,返回值为Number
 
 date.constructor;
 
-date.valueOf(); //返回date对象的原始值
+date.valueOf(); //返回date对象的原始值，毫秒数，返回值为Number
 
 //日期格式化，输入格式因浏览器而异。
 date.toString(); //把date转换为字符串
@@ -423,6 +423,8 @@ date.getUTCMinutes(); //
 date.getUTCSeconds(); //
 date.getUTCMilliseconds(); //注意S小写
 
+date.getTimezoneOffset(); //返回本地时间与UTC时间相差的分钟数。
+
 date.setTime(); // 以毫秒设置日期，会改变整个日期
 
 date.setDate(); //设置Date对象月中的某一天，1~31
@@ -441,7 +443,6 @@ date.setUTCMinutes(); //
 date.setUTCSeconds(); //
 date.setUTCMilliseconds(); //
 
-date.getTimezoneOffset(); //返回本地时间与UTC时间相差的分钟数。
 
 
 
