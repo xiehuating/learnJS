@@ -1,12 +1,6 @@
-/*
-*
-*
-*
-* Object
-*
-*
-*
-*/
+# Object
+
+
 
 Object.prototype;
 
@@ -51,19 +45,10 @@ obj.propertyIsEnumerable(prop); //返回一个布尔值，表示指定的属性�
 
 
 
-/***************************************************************************************/
+
+# Array
 
 
-
-/*
-*
-*
-*
-* Array
-*
-*
-*
-*/
 
 arr.constructor;
 Array.prototype;
@@ -196,19 +181,19 @@ arr.forEach(func); //对数组中每一项运行给定函数，没有返回值�
 		return (item > 2);
 	})
 	alert(someResult); //true
-
+	
 	var numbers = [1,2,3,4,5,4,3,2,1];
 	var filterResult = numbers.filter(function(item,index,array){
 		return (item > 2);
 	})
 	alert(filterResult); // [3,4,5,4,3]
-
+	
 	var numbers = [1,2,3,4,5,4,3,2,1];
 	var mapResult = numbers.map(function(item, index, array){
 		return item*2;
 	})
 	alert(mapResult); //[2,4,6,8,10,8,6,4,2]
-
+	
 	var numbers = [1,2,3,4,5,4,3,2,1];
 	numbers.forEach(function(item,index,array){
 		//执行某些操作
@@ -258,19 +243,11 @@ instanceof
 Array.isArray();
 	Array.isArray(arr); //true
 
-/***************************************************************************************/
 
 
+# RegExp
 
-/*
-*
-*
-*
-* RegExp
-*
-*
-*
-*/
+
 
 RegExp.prototype;
 
@@ -303,19 +280,10 @@ regexp.test();
 
 
 
-/***************************************************************************************/
+
+# Function
 
 
-
-/*
-*
-*
-*
-* Function
-*
-*
-*
-*/
 Function.prototype;
 
 //func.arguments; //已经被废弃了, 现在推荐的做法是使用函数内部可用的 arguments 对象来访问函数的实参。
@@ -369,18 +337,10 @@ arguments.length;
 
 
 
-/***************************************************************************************/
+
+# Date
 
 
-/*
-*
-*
-*
-* Date
-*
-*
-*
-*/
 
 Date.prototype;
 
@@ -447,19 +407,10 @@ date.setUTCMilliseconds(); //
 
 
 
-/***************************************************************************************/
+
+# Math
 
 
-
-/*
-*
-*
-*
-* Math
-*
-*
-*
-*/
 
 Math.E; //返回算数常量e，即自然对数的底数（约等于2.718）
 Math.LN2; //返回2的自然对数（约等于0.693）
@@ -504,20 +455,10 @@ Math.random(); //返回0~1的随机数
 
 
 
-/***************************************************************************************/
+# Global 全局对象
 
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects
 
-
-/*
-*
-*
-*
-* Global 全局对象
-* https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects
-*
-*
-*
-*/
 
 undefined
 NaN
