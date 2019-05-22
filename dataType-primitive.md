@@ -7,49 +7,66 @@
 #undefined
 #Boolean
 
-`Boolean.prototype;`
+**`Boolean.prototype;`**
 
-`bool.constructor;`
+**`bool.constructor;`**
 
-`bool.toString();`
+**`bool.toString();`**
 
-`bool.valueOf();`
+**`bool.valueOf();`**
 
-`bool.toLocaleString();`
+**`bool.toLocaleString();`**
 
 #Number
 
 ## 属性
 
-`Number.prototype;` 
-//可以给Number构造函数设置prototype中的属性和方法
+**`Number.prototype;` **
 
-`Number.MAX_VALUE;` 表示最大数
-`Number.MIN_VALUE;` 表示最小数
+可以给Number构造函数设置prototype中的属性和方法
 
+**`Number.MAX_VALUE;` **
 
-`Number.NaN;` 非数值数字，JS以NaN的形式输出Number.NaN
+表示最大数
 
+**`Number.MIN_VALUE;` **
 
-`Number.NEGATIVE_INFINITY;` 溢出时返回该值，负无穷大，-Infinity
-`Number.POSITIVE_INFINITY;` 溢出时返回该值，正无穷大，+Infinity
+表示最小数
 
-`num.constructor;`
+**`Number.NaN;` **
+
+非数值数字，JS以NaN的形式输出Number.NaN
+
+**`Number.NEGATIVE_INFINITY;` **
+
+溢出时返回该值，负无穷大，-Infinity
+
+**`Number.POSITIVE_INFINITY;` **
+
+溢出时返回该值，正无穷大，+Infinity
+
+**`num.constructor;`**
 
 ## 方法
 
-`num.valueOf();`
-`num.toString();`
-`num.toLocaleString();`
+**`num.valueOf();`**
 
-`num.toFixed();` 按照指定的小数返回数值的字符串表示
+**`num.toString();`**
+
+**`num.toLocaleString();`**
+
+**`num.toFixed();` **
+
+按照指定的小数返回数值的字符串表示
 
 ```javascript
 	var num=10.005;
 	num.toFixed(2); //"10.01"
 ```
 
-`num.toExponential();` 该方法返回以指数表示法表示的数值的字符串形式
+**`num.toExponential();` **
+
+该方法返回以指数表示法表示的数值的字符串形式
 
 ```javascript
 	var num=10;
@@ -57,7 +74,9 @@
 	num.toExponential(2) //"1.00e+1"
 ```
 
-`num.toPrecision();` 能够得到某个最适合的数字格式的字符串表达
+**`num.toPrecision();` **
+
+能够得到某个最适合的数字格式的字符串表达
 
 ```javascript
 	var num=99;
@@ -71,11 +90,13 @@
 
 ## 属性
 
-`String.prototype;` //可以给String构造函数设置prototype中的属性和方法
+**`String.prototype;` **
 
-`str.constructor;`
+可以给String构造函数设置prototype中的属性和方法
 
-`str.length;`
+**`str.constructor;`**
+
+**`str.length;`**
 
 ## 方法
 
@@ -85,7 +106,7 @@
 
 ### 查找字符
 
-`str.charAt(index);`
+**`str.charAt(index);`**
 
 ```javascript
 var stringValue = "hello world";
@@ -93,7 +114,7 @@ alert(stringValue.chatAt(1)); //"e"
 alert(stringValue[1]); //"e"
 ```
 
-`str.charCodeAt(index);`
+**`str.charCodeAt(index);`**
 
 ```javascript
 var stringValue = "hello world";
