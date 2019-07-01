@@ -67,7 +67,6 @@ field.addEventListener("change", func, false);
 	//单行文本框、显示25个字符、最多输入50个字符
 <textarea rows="25" cols="5">initial value<textarea>
 //使用value属性读取或设置文本框的值，不要使用setAttribute()方法或修改textarea的第一个子节点。因为value属性的修改不一定反应在DOM中
-
 textbox.select();
 	//选择文本框文本
 textbox.addEventListener("select", func, false);
@@ -89,7 +88,7 @@ EventUtil.addHandler(textbox, "keypress", function(event){
     if (!/\d/.test(String.fromCharCode(charCode)) && charCode > 9 && !event.ctrlKey){
         EventUtil.preventDefault(event);
     }
-    
+
 });
 
 //操作剪切板
@@ -146,7 +145,7 @@ input.validity.valueMissing;
 //禁用验证
 <form method="post" action="signup.php" novalidate>
 	document.forms[0].noValidate = "true";
-	
+​	
 
 //选择框脚本<select>, <option>
 //select对象属性方法
