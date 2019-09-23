@@ -1,23 +1,38 @@
 [TOC]
 
+# null
 
 
-#null
 
 #undefined
+
+
+
 #Boolean
 
 `Boolean.prototype;`
 
+
+
 `bool.constructor;`
+
+
 
 `bool.toString();`
 
+
+
 `bool.valueOf();`
+
+
 
 `bool.toLocaleString();`
 
+
+
 #Number
+
+
 
 ## Number属性
 
@@ -25,25 +40,37 @@
 
 可以给Number构造函数设置prototype中的属性和方法
 
+
+
 `Number.MAX_VALUE;` 
 
 表示最大数
+
+
 
 `Number.MIN_VALUE;` 
 
 表示最小数
 
+
+
 `Number.NaN;` 
 
 非数值数字，JS以NaN的形式输出Number.NaN
+
+
 
 `Number.NEGATIVE_INFINITY;` 
 
 溢出时返回该值，负无穷大，-Infinity
 
+
+
 `Number.POSITIVE_INFINITY;` 
 
 溢出时返回该值，正无穷大，+Infinity
+
+
 
 `num.constructor;`
 
@@ -53,39 +80,55 @@
 
 `num.valueOf();`
 
+
+
 `num.toString();`
 
+
+
 `num.toLocaleString();`
+
+
+
+#### toFixed
 
 `num.toFixed();` 
 
 按照指定的小数返回数值的字符串表示
 
 ```javascript
-	var num=10.005;
-	num.toFixed(2); //"10.01"
+var num=10.005;
+num.toFixed(2); //"10.01"
 ```
+
+
+
+#### toExponential
 
 `num.toExponential();` 
 
 该方法返回以指数表示法表示的数值的字符串形式
 
 ```javascript
-	var num=10;
-	num.toExponential(1) //"1.0e+1"
-	num.toExponential(2) //"1.00e+1"
+var num=10;
+num.toExponential(1) //"1.0e+1"
+num.toExponential(2) //"1.00e+1"
 ```
+
+
+
+#### toPrecision
 
 `num.toPrecision();` 
 
 能够得到某个最适合的数字格式的字符串表达
 
 ```javascript
-	var num=99;
-	num.toPrecision(0); //argument must be between 1 and 100
-	num.toPrecision(1); //"1e+2" 接收的参数表示所有数字的位数（不包括指数）
-	num.toPrecision(2); //"99"
-	num.toPrecision(3); //"99.0"
+var num=99;
+num.toPrecision(0); //argument must be between 1 and 100
+num.toPrecision(1); //"1e+2" 接收的参数表示所有数字的位数（不包括指数）
+num.toPrecision(2); //"99"
+num.toPrecision(3); //"99.0"
 ```
 
 
@@ -100,7 +143,11 @@
 
 可以给String构造函数设置prototype中的属性和方法
 
+
+
 `str.constructor;`
+
+
 
 `str.length;`
 
@@ -110,7 +157,11 @@
 
 `str.valueOf();`
 
+
+
 `str.toString();`
+
+
 
 `str.toLocaleString();`
 
@@ -128,6 +179,8 @@ alert(stringValue.chatAt(1)); //"e"
 alert(stringValue[1]); //"e"
 ```
 
+
+
 #### charCodeAt
 
 str.charCodeAt(index);`
@@ -137,6 +190,8 @@ var stringValue = "hello world";
 alert(stringValue.charCodeAt(1)); //"101",e字母的unicode编码
 ```
 
+
+
 ### 查找字符位置
 
 #### indexOf
@@ -144,6 +199,8 @@ alert(stringValue.charCodeAt(1)); //"101",e字母的unicode编码
 `str.indexOf(searchvalue, fromindex);` 
 
 从指定位置向后搜索
+
+
 
 #### lastIndexOf
 
@@ -175,6 +232,8 @@ var result = stringValue.concat("world", "!");
 alert(result); //"hello world!"
 ```
 
+
+
 #### Slice
 
 `str.slice(start, end);` 
@@ -191,6 +250,8 @@ alert( stringValue.slice(-3,-4) );  //""（空字符串）
 alert( stringValue.slice(-3,-1) );  //"rl"
 ```
 
+
+
 #### Substr
 
 `str.substr(start, length);` 
@@ -206,6 +267,8 @@ alert( stringValue.substr(3, -4) );  //""（空字符串），第二个参数-4�
 alert( stringValue.substr(-3, -4) );  //""（空字符串），第一个参数-3被转换为8，第二个参数-4被转换为0
 ```
 
+
+
 #### Substring
 
 `str.substring(start, end);` 
@@ -220,6 +283,8 @@ alert( stringValue.substring(-3) );  //"hello world"，第一个参数-3被转�
 alert( stringValue.substring(3,-4) );  //"hel"，第二个参数-4被转换为0
 alert( stringValue.substring(-3, -4) ); //""（空字符串）
 ```
+
+
 
 #### Trim
 
@@ -245,11 +310,11 @@ regexp带有g则执行全局匹配，返回null或者匹配的字符串值的数
 
 ```javascript
 var text = "cat, bat, sat, fat";
-	var pattern = /.at/;
-	var matches = text.match(pattern);
-	alert( matches.index ); //0
-	alert( matches[0] ); //"cat"
-	alert( pattern.lastIndex ); //0
+var pattern = /.at/;
+var matches = text.match(pattern);
+alert( matches.index ); //0
+alert( matches[0] ); //"cat"
+alert( pattern.lastIndex ); //0
 ```
 
 match() 方法将检索字符串 str，以找到一个或多个与 regexp 匹配的文本。
@@ -336,6 +401,8 @@ alert(htmlEscape("<p class=\"greeting\">Hello world!</p>"));
 //&lt;p class=&quot;greeting&quot;&gt;Hello world!&lt;/p&gt;
 ```
 
+
+
 #### Search
 
 `str.search(searchvalue|regexp);` 
@@ -373,9 +440,15 @@ var colors4 = colorText.split("");  //["r","e","d",",","b","l","u","e",",","g","
 
 `str.toLocaleLowerCase();`
 
+
+
 `str.toLocaleUpperCase();`
 
+
+
 `str.toLowerCase();`
+
+
 
 `str.toUpperCase();`
 
