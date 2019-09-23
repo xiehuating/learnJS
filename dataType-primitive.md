@@ -4,11 +4,11 @@
 
 
 
-#undefined
+# undefined
 
 
 
-#Boolean
+# Boolean
 
 `Boolean.prototype;`
 
@@ -30,7 +30,7 @@
 
 
 
-#Number
+# Number
 
 
 
@@ -133,7 +133,7 @@ num.toPrecision(3); //"99.0"
 
 
 
-#String
+# String
 
 
 
@@ -470,7 +470,7 @@ String.fromCharCode(97,98,99,100); //"abcd"
 
 
 
-#Symbol
+# Symbol
 
 new in ECMAScript 6
 
