@@ -98,7 +98,8 @@
 
 ```javascript
 var num=10.005;
-num.toFixed(2); //"10.01"
+num.toFixed(2); 
+//"10.01"
 ```
 
 
@@ -111,8 +112,10 @@ num.toFixed(2); //"10.01"
 
 ```javascript
 var num=10;
-num.toExponential(1) //"1.0e+1"
-num.toExponential(2) //"1.00e+1"
+num.toExponential(1) 
+//"1.0e+1"
+num.toExponential(2) 
+//"1.00e+1"
 ```
 
 
@@ -125,10 +128,14 @@ num.toExponential(2) //"1.00e+1"
 
 ```javascript
 var num=99;
-num.toPrecision(0); //argument must be between 1 and 100
-num.toPrecision(1); //"1e+2" 接收的参数表示所有数字的位数（不包括指数）
-num.toPrecision(2); //"99"
-num.toPrecision(3); //"99.0"
+num.toPrecision(0); 
+//argument must be between 1 and 100
+num.toPrecision(1); 
+//"1e+2" 接收的参数表示所有数字的位数（不包括指数）
+num.toPrecision(2); 
+//"99"
+num.toPrecision(3); 
+//"99.0"
 ```
 
 
@@ -175,8 +182,10 @@ num.toPrecision(3); //"99.0"
 
 ```javascript
 var stringValue = "hello world";
-alert(stringValue.chatAt(1)); //"e"
-alert(stringValue[1]); //"e"
+alert(stringValue.chatAt(1)); 
+//"e"
+alert(stringValue[1]); 
+//"e"
 ```
 
 
@@ -187,7 +196,8 @@ str.charCodeAt(index);`
 
 ```javascript
 var stringValue = "hello world";
-alert(stringValue.charCodeAt(1)); //"101",e字母的unicode编码
+alert(stringValue.charCodeAt(1)); 
+//"101",e字母的unicode编码
 ```
 
 
@@ -210,10 +220,14 @@ alert(stringValue.charCodeAt(1)); //"101",e字母的unicode编码
 
 ```javascript
 var stringValue = "hello world";
-alert( stringValue.indexOf("o") ); //4
-alert( stringValue.lastIndexOf("o") ); //7
-alert( stringValue.indexOf("o", 6) ); //7
-alert( stringValue.lastIndexOf("o", 6) ); //4
+alert( stringValue.indexOf("o") ); 
+//4
+alert( stringValue.lastIndexOf("o") ); 
+//7
+alert( stringValue.indexOf("o", 6) ); 
+//7
+alert( stringValue.lastIndexOf("o", 6) ); 
+//4
 ```
 
 
@@ -229,7 +243,8 @@ alert( stringValue.lastIndexOf("o", 6) ); //4
 ```javascript
 var stringValue = "hello ";
 var result = stringValue.concat("world", "!");
-alert(result); //"hello world!"
+alert(result); 
+//"hello world!"
 ```
 
 
@@ -242,12 +257,18 @@ alert(result); //"hello world!"
 
 ```javascript
 var stringValue = "hello world";
-alert( stringValue.slice(3) );  //"lo world"
-alert( stringValue.slice(3,7) );  //"lo w"
-alert( stringValue.slice(-3) );  //"rld", 第一个参数-3被转换为8
-alert( stringValue.slice(3,-4) );  //"lo w"，第二个参数-4被转换为7
-alert( stringValue.slice(-3,-4) );  //""（空字符串）
-alert( stringValue.slice(-3,-1) );  //"rl"
+alert( stringValue.slice(3) );  
+//"lo world"
+alert( stringValue.slice(3,7) );  
+//"lo w"
+alert( stringValue.slice(-3) );  
+//"rld", 第一个参数-3被转换为8
+alert( stringValue.slice(3,-4) );
+//"lo w"，第二个参数-4被转换为7
+alert( stringValue.slice(-3,-4) );
+//""（空字符串）
+alert( stringValue.slice(-3,-1) );
+//"rl"
 ```
 
 
@@ -260,11 +281,16 @@ alert( stringValue.slice(-3,-1) );  //"rl"
 
 ```javascript
 var stringValue = "hello world";
-alert( stringValue.substr(3) );  //"lo world"
-alert( stringValue.substr(3,7) );  //"lo worl"
-alert( stringValue.substr(-3) );  //"rld"，第一个参数-3被转换为8
-alert( stringValue.substr(3, -4) );  //""（空字符串），第二个参数-4被转换为0
-alert( stringValue.substr(-3, -4) );  //""（空字符串），第一个参数-3被转换为8，第二个参数-4被转换为0
+alert( stringValue.substr(3) );  
+//"lo world"
+alert( stringValue.substr(3,7) );
+//"lo worl"
+alert( stringValue.substr(-3) );
+//"rld"，第一个参数-3被转换为8
+alert( stringValue.substr(3, -4) );
+//""（空字符串），第二个参数-4被转换为0
+alert( stringValue.substr(-3, -4) );
+//""（空字符串），第一个参数-3被转换为8，第二个参数-4被转换为0
 ```
 
 
@@ -277,11 +303,16 @@ alert( stringValue.substr(-3, -4) );  //""（空字符串），第一个参数-3
 
 ```javascript
 var stringValue = "hello world";
-alert( stringValue.substring(3) );  //"lo world"
-alert( stringValue.substring(3,7) );  //"lo w"
-alert( stringValue.substring(-3) );  //"hello world"，第一个参数-3被转换为0
-alert( stringValue.substring(3,-4) );  //"hel"，第二个参数-4被转换为0
-alert( stringValue.substring(-3, -4) ); //""（空字符串）
+alert( stringValue.substring(3) );
+//"lo world"
+alert( stringValue.substring(3,7) );
+//"lo w"
+alert( stringValue.substring(-3) );
+//"hello world"，第一个参数-3被转换为0
+alert( stringValue.substring(3,-4) );
+//"hel"，第二个参数-4被转换为0
+alert( stringValue.substring(-3, -4) );
+//""（空字符串）
 ```
 
 
@@ -295,7 +326,8 @@ alert( stringValue.substring(-3, -4) ); //""（空字符串）
 ```javascript
 var stringValue = "   hello world   ";
 var trimmedStringValue = stringValue.trim();
-alert( trimmedStringValue ); //"hello world"
+alert( trimmedStringValue );
+//"hello world"
 ```
 
 
@@ -312,9 +344,12 @@ regexp带有g则执行全局匹配，返回null或者匹配的字符串值的数
 var text = "cat, bat, sat, fat";
 var pattern = /.at/;
 var matches = text.match(pattern);
-alert( matches.index ); //0
-alert( matches[0] ); //"cat"
-alert( pattern.lastIndex ); //0
+alert( matches.index );
+//0
+alert( matches[0] );
+//"cat"
+alert( pattern.lastIndex );
+//0
 ```
 
 match() 方法将检索字符串 str，以找到一个或多个与 regexp 匹配的文本。
@@ -353,9 +388,11 @@ index 属性声明的是匹配文本的起始字符在 str 中的位置，input 
 ```javascript
 var text = "cat,bat,sat,fat";
 var result = text.replace("at","ond");
-alert(result); //"cond,bat,sat,fat";
+alert(result);
+//"cond,bat,sat,fat";
 result = text.replace(/at/g, "ond");
-alert(result);//"cond,bond,sond,fond"
+alert(result);
+//"cond,bond,sond,fond"
 ```
 
 ```javascript
@@ -371,7 +408,8 @@ alert(result);//"cond,bond,sond,fond"
 ```javascript
 var text = "cat,bat,sat,fat";
 result = text.replace(/(.at)/g,"word ($1)"); 
-alert(result); // world (cat), world (bat), world (sat), world (fat)
+alert(result);
+// world (cat), world (bat), world (sat), world (fat)
 
 // 第二个参数也可以是一个函数
 // 每个匹配都会调用该函数, 函数返回的字符串替换匹配的文本
@@ -414,7 +452,8 @@ alert(htmlEscape("<p class=\"greeting\">Hello world!</p>"));
 ```javascript
 	var text = "cat, bat, sat, fat";
 	var pos = text.search(/at/);
-	alert(pos); //1
+	alert(pos);
+//1
 ```
 
 
@@ -428,9 +467,12 @@ alert(htmlEscape("<p class=\"greeting\">Hello world!</p>"));
 ```javascript
 var colorText = "red,blue,green,yellow";
 
-var colors1 = colorText.split(",");      //["red", "blue", "green", "yellow"]
-var colors2 = colorText.split(",", 2);   //["red", "blue"]
-var colors3 = colorText.split(/[^\,]+/); //["", ",", ",", ",", ""]	
+var colors1 = colorText.split(",");
+//["red", "blue", "green", "yellow"]
+var colors2 = colorText.split(",", 2);
+//["red", "blue"]
+var colors3 = colorText.split(/[^\,]+/);
+//["", ",", ",", ",", ""]	
 var colors4 = colorText.split("");  //["r","e","d",",","b","l","u","e",",","g","r","e","e","n",",","y","e","l","l","o","w"]
 ```
 
@@ -465,7 +507,8 @@ var colors4 = colorText.split("");  //["r","e","d",",","b","l","u","e",",","g","
 `String.fromCharCode(num1,num2,...,numN);`
 
 ```javascript
-String.fromCharCode(97,98,99,100); //"abcd"
+String.fromCharCode(97,98,99,100);
+//"abcd"
 ```
 
 
