@@ -28,7 +28,7 @@ eval(code);  // 错误
 
 ## 完整JSON语法
 
-```
+```javascript
 JSON = null
     or true or false
     or JSONNumber
