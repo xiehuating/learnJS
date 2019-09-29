@@ -1,0 +1,9 @@
+diff a/AJAX.md b/AJAX.md	(rejected hunks)
+@@ -4,6 +4,7 @@
+ 
+ # 对象
+ 
++`XMLHttpRequest();`
+ 
+ ```javascript
+ var xhr = new XMLHttpRequest();

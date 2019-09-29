@@ -4,7 +4,7 @@
 
 # 对象
 
-`XMLHttpRequest();`
+**`XMLHttpRequest();`**
 
 ```javascript
 var xhr = new XMLHttpRequest();

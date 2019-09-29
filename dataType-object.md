@@ -1,12 +1,20 @@
+[TOC]
+
+
+
 # Object
 
 
 
-Object.prototype;
+`Object.prototype;`
 
+`Object.assign( target, source )` 
 
-Object.assign( target, source ) //用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。
-Object.create( obj ); //使用指定的原型对象和属性创建一个新对象。返回新对象。括号中对象为新对象的原型属性。
+用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。
+
+`Object.create( obj );` 
+
+使用指定的原型对象和属性创建一个新对象。返回新对象。括号中对象为新对象的原型属性。
 
 Object.defineProperties(obj, props); //?
 Object.defineProperty(obj, prop, descriptor); //?
