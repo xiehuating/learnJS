@@ -1,70 +1,135 @@
-// Form script
-
-//获取页面中所有表单
-document.forms
-document.forms[0];
-document.forms["form2"]
-
-//提交表单
-// 1.<input type="submit" value="Submit Form">
-// 2.<button type="submit">Submit Form</button>
-// 3.<input type="image" src="graphic.gif">
-// 4.document.getElementById("myForm").submit()
-// 以编程方式的submit()方式提交不会触发submit事件
-// 提交表单出现最大问题是用户重复提交
-
-//重置表单
-// 1.<input type="reset" value="Reset Form">
-// 2.<button type="reset">Reset Form</button>
-// 3.document.getElementById("myForm").reset();
-// 以编程方式reset()会像单机重置按钮一样触发reset事件
-
-
-form.acceptCharset
-form.action
-form.elements
-	form.elements[0]; //与form[0]访问到的元素相同，建议使用form.elements
-	form.elements["textbox1"]; //与form["textbox1"]访问到的元素相同，建议使用form.elements
-	form.elements.length;
-form.enctype
-form.length
-form.method
-form.name
-form.target
-form.reset()
-form.submit()
+[TOC]
 
 
 
+# Form script
+
+## 基础知识
+
+### 获取页面中所有表单
+
+`document.forms`
+
+`document.forms[0];`
+
+`document.forms["form2"]`
 
 
-//共有的表单字段属性，动态修改表字段属性
-var field = document.getElementById("myForm").elements[0];
-field.disabled
-field.form
-field.name
-field.readOnly
-field.tebIndex
-field.type
-field.value
 
-//共有的表单字段方法
-field.focus(); 
-	// <input type="text" autofocus> 页面加载后，自动获得焦点
-field.blur();
+### 提交表单
+
+1. <input type="submit" value="Submit Form">
+2. `<button type="submit">Submit Form</button>`
+3. <input type="image" src="graphic.gif">
+4. `document.getElementById("myForm").submit()`
 
 
-//共有的表单字段事件
-field.addEventListener("focus", func, false);
-field.addEventListener("blur", func, false);
-field.addEventListener("change", func, false);
-	//在对于input和textarea，获得焦点、失去焦点、value值改变都会触发change事件
-	//对于select，用户选择不同选项就会触发change事件
+
+以编程方式的submit()方式提交不会触发submit事件。
+
+提交表单出现最大问题是用户重复提交。
 
 
-//文本框
+
+### 重置表单
+
+1. <input type="reset" value="Reset Form">
+2. `<button type="reset"> Reset Form </button>`
+3. `document.getElementById("myForm").reset();`
+
+
+
+以编程方式reset()会像单机重置按钮一样触发reset事件
+
+`form.acceptCharset`
+
+`form.action`
+
+`form.elements`
+
+每个表单都有elements属性，该属性是表单中所有元素（字段）的集合
+
+```javascript
+var form = document.getElementById("form1");
+
+form.elements[0]; 
+//取得表单中的第一个元素（字段）
+//与form[0]访问到的元素相同，建议使用form.elements
+
+form.elements["textbox1"]; 
+//取得名为“textbox1”的元素（字段）
+//与form["textbox1"]访问到的元素相同，建议使用form.elements
+
+form.elements.length;
+//取得表单中包含的字段的数量
+```
+
+`form.enctype`
+
+`form.length`
+
+`form.method`
+
+`form.name`
+
+`form.target`
+
+`form.reset()`
+
+`form.submit()`
+
+
+
+#### 共有的表单字段（元素）属性
+
+> 除了<fieldset>元素之外，所有表达字段都拥有一下属性
+
+`var field = document.getElementById("myForm").elements[0];`
+
+`field.disabled`
+
+`field.form`
+
+`field.name`
+
+`field.readOnly`
+
+`field.tebIndex`
+
+`field.type`
+
+`field.value`
+
+
+
+#### 共有的表单字段（元素）方法
+
+`field.focus();` 
+
+`field.blur();`
+
+ `<input type="text" autofocus />` 页面加载后，自动获得焦点
+
+
+
+#### 共有的表单字段（元素）事件
+
+`field.addEventListener("focus", func, false);`
+
+`field.addEventListener("blur", func, false);`
+
+`field.addEventListener("change", func, false);`
+
+在对于input和textarea，获得焦点、失去焦点、value值改变都会触发change事件
+对于select，用户选择不同选项就会触发change事件
+
+
+
+## 文本框
+
 <input type="text" size="25" maxLength="50" value="initial value">
 	//单行文本框、显示25个字符、最多输入50个字符
+
 <textarea rows="25" cols="5">initial value<textarea>
 //使用value属性读取或设置文本框的值，不要使用setAttribute()方法或修改textarea的第一个子节点。因为value属性的修改不一定反应在DOM中
 textbox.select();
@@ -147,7 +212,11 @@ input.validity.valueMissing;
 	document.forms[0].noValidate = "true";
 ​	
 
-//选择框脚本<select>, <option>
+
+## 选择框脚本
+
+<select>, <option>
+
 //select对象属性方法
 select.add(newOption,relOption);
 select.multiple;
@@ -223,7 +292,13 @@ selectbox.insertBefore(optionToMove, selectbox.options[optionToMove.index + 2]);
 
 
 
+## 表单序列化
 
+
+
+
+
+## 富文本编辑
 
 
 
